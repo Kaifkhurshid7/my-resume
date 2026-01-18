@@ -242,8 +242,7 @@ const App = () => {
             ))}
           </div>
         </section>
-
-        {/* 5. ACHIEVEMENTS & UNIVERSITY ACTIVITIES SECTION */}
+{/* 5. ACHIEVEMENTS & UNIVERSITY ACTIVITIES SECTION */}
         <section id="activities" className="py-24 md:py-32 border-t border-white/5">
           <div className="space-y-4 mb-20">
             <h2 className="text-[10px] uppercase tracking-[0.6em] text-yellow-500 font-black flex items-center gap-3">
@@ -255,42 +254,92 @@ const App = () => {
           </div>
 
           <div className="grid lg:grid-cols-12 gap-8 items-start">
-            {/* Major Achievement */}
-            <div className="lg:col-span-7 p-8 md:p-12 bg-gradient-to-br from-[#111] to-black border border-white/5 rounded-[3rem] group hover:border-yellow-500/30 transition-all">
-              <div className="flex justify-between items-start mb-10">
-                <div className="w-16 h-16 bg-yellow-500/10 rounded-2xl flex items-center justify-center text-yellow-500"><Award size={32} /></div>
-                <span className="text-[10px] font-black text-yellow-500 uppercase tracking-widest border border-yellow-500/20 px-4 py-2 rounded-full">Indore Summit</span>
+            {/* LEFT COLUMN: MAJOR ACHIEVEMENTS */}
+            <div className="lg:col-span-7 space-y-6">
+              {/* Achievement 1 */}
+              <div className="p-8 md:p-12 bg-gradient-to-br from-[#111] to-black border border-white/5 rounded-[3rem] group hover:border-yellow-500/30 transition-all">
+                <div className="flex justify-between items-start mb-10">
+                  <div className="w-16 h-16 bg-yellow-500/10 rounded-2xl flex items-center justify-center text-yellow-500"><Award size={32} /></div>
+                  <span className="text-[10px] font-black text-yellow-500 uppercase tracking-widest border border-yellow-500/20 px-4 py-2 rounded-full">National Winner</span>
+                </div>
+                <h4 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase italic">1st Prize — ACM India Summit</h4>
+                <p className="text-neutral-400 text-lg leading-relaxed mb-8">Ranked #1 among 50+ nationwide teams. Recognized for outstanding technical innovation and community leadership within the ACM network.</p>
+                <div className="flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-neutral-600">
+                  <div className="flex items-center gap-2"><MapPin size={12}/> Indore, India</div>
+                  <div className="flex items-center gap-2"><Calendar size={12}/> Decemeber-2025</div>
+                </div>
               </div>
-              <h4 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase italic">1st Prize — ACM India Summit</h4>
-              <p className="text-neutral-400 text-lg leading-relaxed mb-8">Ranked #1 among 50+ nationwide teams. Recognized for outstanding technical innovation and community leadership within the ACM network.</p>
-              <div className="flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-neutral-600">
-                <div className="flex items-center gap-2"><MapPin size={12}/> Indore, India</div>
-                <div className="flex items-center gap-2"><Calendar size={12}/> 2024</div>
-              </div>
-            </div>
-            
 
-            {/* University Timeline */}
-            <div className="lg:col-span-5 bg-[#0a0a0a] border border-white/5 rounded-[3rem] p-8 md:p-12 relative overflow-hidden h-full">
-              <h4 className="text-xs font-black text-neutral-500 uppercase tracking-[0.4em] mb-12 italic">XIM University</h4>
-              <div className="space-y-12 relative">
-                <div className="absolute left-3 top-2 bottom-2 w-[1px] bg-white/5"></div>
-                {[
-                  { role: "Chairperson", org: "ACM Student Chapter", period: "Current" },
-                  { role: "Executive Member", org: "Career Service Advisory", period: "2024-25" },
-                  { role: "Lead Organizer", org: "HackXcelerate 2024", period: "2024" }
-                ].map((act, i) => (
-                  <div key={i} className="relative pl-10 group">
-                    <div className="absolute left-2 top-2 w-2 h-2 rounded-full bg-neutral-800 group-hover:bg-blue-500 transition-colors z-10 border-4 border-[#0a0a0a] box-content"></div>
-                    <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-1">{act.period}</p>
-                    <h5 className="text-white font-bold text-xl tracking-tight mb-1 uppercase italic">{act.role}</h5>
-                    <p className="text-neutral-600 text-[10px] font-black uppercase tracking-widest">{act.org}</p>
-                  </div>
-                ))}
+              {/* Achievement 2 (Added for balance) */}
+              <div className="p-8 md:p-12 bg-gradient-to-br from-[#111] to-black border border-white/5 rounded-[3rem] group hover:border-blue-500/30 transition-all">
+                <div className="flex justify-between items-start mb-10">
+                  <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500"><Sparkles size={32} /></div>
+                  <span className="text-[10px] font-black text-blue-500 uppercase tracking-widest border border-blue-500/20 px-4 py-2 rounded-full">Academic Honor</span>
+                </div>
+                <h4 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase italic">Runner-up – Xamboree Fest Idea Competition</h4>
+                <p className="text-neutral-400 text-lg leading-relaxed mb-8">Awarded among participants from 30+ universities for designing and pitching a viable tech-driven solution.</p>
+                <div className="flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-neutral-600">
+                  <div className="flex items-center gap-2"><MapPin size={12}/> Bhubaneswar</div>
+                  <div className="flex items-center gap-2"><Calendar size={12}/> March 2025</div>
+                </div>
               </div>
-              <GraduationCap className="absolute -bottom-10 -right-10 text-white/[0.02]" size={250} />
             </div>
-          </div>
+
+            {/* RIGHT COLUMN: POSITIONS OF RESPONSIBILITY */}
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              <h4 className="text-xs font-black text-neutral-500 uppercase tracking-[0.4em] mb-4 italic">
+                Positions of Responsibility
+              </h4>
+
+              {/* ROLE 1: ACM CHAIRPERSON */}
+              <div className="group p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:bg-neutral-900/50 transition-all duration-500 relative overflow-hidden">
+                <div className="relative z-10">
+                  <div className="flex justify-between items-center mb-6">
+                    <div className="p-3 bg-blue-500/10 rounded-xl text-blue-500">
+                      <Terminal size={20} />
+                    </div>
+                    <span className="text-[9px] font-black text-neutral-600 uppercase tracking-widest">Leadership</span>
+                  </div>
+                  <h5 className="text-white font-bold text-xl uppercase italic mb-2">Chairperson — ACM Chapter</h5>
+                  <p className="text-neutral-500 text-xs leading-relaxed mb-4">
+                    Leading a community of <span className="text-white">60+ student engineers</span>. Orchestrating technical workshops and fostering open-source culture at XIM University.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-[8px] font-bold text-blue-500/80 border border-blue-500/20 px-2 py-1 rounded-md uppercase">Strategy</span>
+                    <span className="text-[8px] font-bold text-blue-500/80 border border-blue-500/20 px-2 py-1 rounded-md uppercase">Mentorship</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* ROLE 2: CAREER ADVISORY */}
+              <div className="group p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:bg-neutral-900/50 transition-all duration-500">
+                <div className="flex justify-between items-center mb-6">
+                  <div className="p-3 bg-purple-500/10 rounded-xl text-purple-500">
+                    <Globe size={20} />
+                  </div>
+                  <span className="text-[9px] font-black text-neutral-600 uppercase tracking-widest">Placement</span>
+                </div>
+                <h5 className="text-white font-bold text-xl uppercase italic mb-2">Executive — Career Advisory</h5>
+                <p className="text-neutral-500 text-xs leading-relaxed">
+                  Bridge between the student body and corporate recruiters. Coordinating peer-to-peer coding bootcamps for technical placement preparation.
+                </p>
+              </div>
+
+              {/* ROLE 3: HACKATHON ORGANIZER */}
+              <div className="group p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:bg-neutral-900/50 transition-all duration-500">
+                <div className="flex justify-between items-center mb-6">
+                  <div className="p-3 bg-green-500/10 rounded-xl text-green-500">
+                    <Zap size={20} />
+                  </div>
+                  <span className="text-[9px] font-black text-neutral-600 uppercase tracking-widest">Events</span>
+                </div>
+                <h5 className="text-white font-bold text-xl uppercase italic mb-2">Lead Organizer — HackXcelerate</h5>
+                <p className="text-neutral-500 text-xs leading-relaxed">
+                  Managed end-to-end execution of a <span className="text-white">24-hour university hackathon</span>. Handled judging criteria and sponsorship outreach.
+                </p>
+              </div>
+            </div>
+          </div> {/* This closing tag for grid lg:grid-cols-12 was missing/misplaced */}
         </section>
 
         {/* 6. CONTACT & FOOTER */}
