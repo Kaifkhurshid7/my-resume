@@ -22,7 +22,7 @@ const App = () => {
     <div className="min-h-screen bg-[#050505] text-gray-400 font-sans selection:bg-white selection:text-black">
       
 {/* 1. STATIC NAVIGATION */}
-      <nav className="absolute top-0 left-0 w-full z-[100] px-4 md:px-10 py-6">
+      <nav className="absolute top-0 left-0 w-full z-[100] px-4 md:px-10 py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center bg-black/40 backdrop-blur-xl border border-white/5 p-3 md:p-4 rounded-full">
           <div className="flex items-center gap-3 pl-2">
             <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-black font-black text-xs">K</div>
@@ -68,22 +68,23 @@ const App = () => {
       <main className="max-w-7xl mx-auto px-6">
         
         {/* 2. HERO SECTION */}
-        <section id="home" className="pt-32 md:pt-48 pb-20 flex flex-col lg:grid lg:grid-cols-12 gap-12 lg:gap-16 items-center lg:items-start">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
-            className="w-full max-w-sm lg:max-w-none lg:col-span-5 lg:order-2 relative"
-          >
-            <div className="aspect-[4/5] bg-neutral-900 rounded-[2.5rem] overflow-hidden border border-white/10 group shadow-2xl">
-              <img 
-                src={kaifPhoto} 
-                alt="Kaif Khurshid" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-4 -right-4 bg-white text-black px-6 py-3 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl">
-              Macline Learning Enthusiast <Sparkles size={12} className="inline-block ml-2 text-yellow-500"/>
-            </div>
-          </motion.div>
+        <section id="home" className="pt-32 md:pt-24 pb-20 flex flex-col lg:grid lg:grid-cols-12 gap-12 lg:gap-16 items-center lg:items-start">
+       <motion.div 
+  initial={{ opacity: 0, scale: 0.9 }} 
+  animate={{ opacity: 1, scale: 1 }}
+  className="w-full max-w-sm lg:max-w-none lg:col-span-5 lg:order-2 relative"
+>
+  <div className="aspect-[4/5] bg-neutral-900 rounded-[2.5rem] overflow-hidden border border-white/10 group shadow-2xl">
+    <img 
+      src={kaifPhoto} 
+      alt="Kaif Khurshid" 
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <div className="absolute -bottom-4 -right-4 bg-white text-black px-6 py-3 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl">
+    Machine Learning Enthusiast
+  </div>
+</motion.div>
 
           <div className="lg:col-span-7 lg:order-1 text-center lg:text-left">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -111,7 +112,7 @@ const App = () => {
         </section>
 
         {/* 3. TECHNICAL ARSENAL SECTION */}
-        <section id="tech" className="py-24 md:py-32 bg-[#050505] border-t border-white/5">
+        <section id="tech" className="py-12 md:py-12 bg-[#050505] border-t border-white/5">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 gap-8">
             <div className="space-y-4">
               <h2 className="text-[10px] uppercase tracking-[0.6em] text-blue-500 font-black flex items-center gap-3">
@@ -187,7 +188,7 @@ const App = () => {
         </section>
 
         {/* 4. FEATURED WORKS SECTION */}
-        <section id="work" className="py-24 md:py-32 border-t border-white/5">
+        <section id="work" className="py-12 md:py-12 border-t border-white/5">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="space-y-4">
               <h2 className="text-[10px] uppercase tracking-[0.6em] text-blue-500 font-black flex items-center gap-3">
@@ -246,7 +247,7 @@ const App = () => {
           </div>
         </section>
 {/* 5. ACHIEVEMENTS & UNIVERSITY ACTIVITIES SECTION */}
-        <section id="activities" className="py-24 md:py-32 border-t border-white/5">
+        <section id="activities" className="py-12 md:py-12 border-t border-white/5">
           <div className="space-y-4 mb-20">
             <h2 className="text-[10px] uppercase tracking-[0.6em] text-yellow-500 font-black flex items-center gap-3">
               <Award size={14} /> Honors & Impact
@@ -346,7 +347,7 @@ const App = () => {
         </section>
 
         {/* 6. CONTACT & FOOTER */}
-        <footer id="contact" className="py-24 border-t border-white/5">
+        <footer id="contact" className="py-12 border-t border-white/5">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-5xl md:text-9xl font-black text-white tracking-tighter mb-12 uppercase leading-[0.8]">
               Let's <br /> <span className="text-neutral-800 italic">Connect.</span>
