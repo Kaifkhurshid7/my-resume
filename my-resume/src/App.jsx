@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import kaifPhoto from './assets/kaif.jpg';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Github, Linkedin, Mail, Download, Terminal, 
@@ -13,7 +14,7 @@ const App = () => {
     { name: 'Intro', id: 'home' },
     { name: 'Tech', id: 'tech' },
     { name: 'Work', id: 'work' },
-    { name: 'Activities', id: 'activities' }, // Added new link
+    { name: 'Activities', id: 'activities' }, 
     { name: 'Contact', id: 'contact' }
   ];
 
@@ -71,13 +72,13 @@ const App = () => {
           >
             <div className="aspect-[4/5] bg-neutral-900 rounded-[2.5rem] overflow-hidden border border-white/10 group shadow-2xl">
               <img 
-                src="/my-photo.jpg" 
+                src={kaifPhoto} 
                 alt="Kaif Khurshid" 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="absolute -bottom-4 -right-4 bg-white text-black px-6 py-3 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl">
-              Backend Pro
+              Macline Learning Enthusiast <Sparkles size={12} className="inline-block ml-2 text-yellow-500"/>
             </div>
           </motion.div>
 
