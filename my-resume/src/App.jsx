@@ -21,8 +21,8 @@ const App = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-gray-400 font-sans selection:bg-white selection:text-black">
       
-      {/* 1. ADAPTIVE NAVIGATION */}
-      <nav className="fixed w-full z-[100] px-4 md:px-10 py-6">
+{/* 1. STATIC NAVIGATION */}
+      <nav className="absolute top-0 left-0 w-full z-[100] px-4 md:px-10 py-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center bg-black/40 backdrop-blur-xl border border-white/5 p-3 md:p-4 rounded-full">
           <div className="flex items-center gap-3 pl-2">
             <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-black font-black text-xs">K</div>
@@ -31,17 +31,20 @@ const App = () => {
           
           <div className="hidden md:flex gap-8 text-[10px] uppercase tracking-[0.2em] font-bold">
             {navLinks.map(link => (
-              <a key={link.id} href={`#${link.id}`} className="hover:text-white transition-colors">{link.name}</a>
+              <a key={link.id} href={`#${link.id}`} className="hover:text-white transition-colors text-neutral-400">{link.name}</a>
             ))}
           </div>
 
           <div className="flex items-center gap-2">
-            <a href="mailto:kaifkhurshid18@gmail.com" className="p-2 md:p-3 hover:bg-white/10 rounded-full transition-colors"><Mail size={18} className="text-white"/></a>
-            <button onClick={() => setIsMenuOpen(true)} className="md:hidden p-2 text-white"><Menu size={20}/></button>
+            <a href="mailto:kaifkhurshid18@gmail.com" className="p-2 md:p-3 hover:bg-white/10 rounded-full transition-colors text-white">
+              <Mail size={18} />
+            </a>
+            <button onClick={() => setIsMenuOpen(true)} className="md:hidden p-2 text-white">
+              <Menu size={20}/>
+            </button>
           </div>
         </div>
       </nav>
-
       {/* MOBILE MENU OVERLAY */}
       <AnimatePresence>
         {isMenuOpen && (
