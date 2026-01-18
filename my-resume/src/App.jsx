@@ -371,11 +371,15 @@ const App = () => {
             </div>
 
             <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 gap-6 text-[10px] font-bold uppercase tracking-[0.4em] text-neutral-800">
-              <p>© 2026 KAIF KHURSHID • XIM UNIVERSITY</p>
-              <div className="flex gap-8">
-                <a href="#home" className="hover:text-white transition-colors">Back to top</a>
-                <span className="text-neutral-900">•</span>
-                <span>Software Engineer</span>
+             <p className="hover:text-white transition-colors cursor-default">
+                © 2026 KAIF KHURSHID • <span className="text-white/30">XIM UNIVERSITY</span>
+              </p>
+              <div className="flex items-center gap-8">
+                <a href="#home" className="text-white hover:text-blue-500 transition-all duration-300">
+                  Back to top
+                </a>
+                <span className="text-white/10">•</span>
+                <span className="text-white tracking-[0.6em]">Software Engineer</span>
               </div>
             </div>
           </div>
