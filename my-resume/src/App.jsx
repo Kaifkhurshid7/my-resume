@@ -212,21 +212,21 @@ const App = () => {
               </div>
               <div className="pt-6 border-t border-white/5 flex items-center gap-2">
                 <Calendar size={12} className="text-neutral-600" />
-                <span className="text-[10px] font-black text-neutral-600 uppercase tracking-[0.2em]">2022 — 2026</span>
+                <span className="text-[10px] font-black text-neutral-600 uppercase tracking-[0.2em]">2022 — 2027</span>
               </div>
             </div>
 
             {/* 12th GRADE */}
-            <div className="group p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:border-neutral-700 transition-all duration-500 flex flex-col justify-between min-h-[300px]">
+           <div className="group p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:border-neutral-700 transition-all duration-500 flex flex-col justify-between min-h-[300px]">
               <div>
                 <div className="flex justify-between items-start mb-6">
                   <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-neutral-400">
-                    <Code size={20} />
+                    <MapPin size={20} />
                   </div>
                   <span className="text-[9px] font-black text-neutral-600 border border-white/5 px-3 py-1 rounded-full uppercase tracking-widest">Completed</span>
                 </div>
                 <h4 className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em] mb-2">CBSE (Class XII)</h4>
-                <h5 className="text-2xl font-black text-white uppercase italic leading-tight mb-2">Senior Secondary <br/> Science</h5>
+                <h5 className="text-2xl font-black text-white uppercase italic leading-tight mb-2">Higher Secondary <br/> Education</h5>
                 <p className="text-xs text-neutral-400 font-bold uppercase tracking-widest">Agrasen Dav Public School, Ramgarh Jharkhand</p>
               </div>
               <div className="pt-6 border-t border-white/5 flex items-center gap-2">
@@ -256,65 +256,73 @@ const App = () => {
 
           </div>
         </section>
-        {/* 4. FEATURED WORKS SECTION */}
-        <section id="work" className="py-12 md:py-12 border-t border-white/5">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-            <div className="space-y-4">
-              <h2 className="text-[10px] uppercase tracking-[0.6em] text-blue-500 font-black flex items-center gap-3">
-                <div className="w-8 h-[1px] bg-blue-500"></div> Portfolio Selection
-              </h2>
-              <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
-                Featured <br/> <span className="text-neutral-800 italic">Projects.</span>
-              </h3>
-            </div>
-            <a href="https://github.com/Kaifkhurshid7" target="_blank" className="group flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-4 rounded-2xl hover:bg-white hover:text-black transition-all duration-500">
-              <div className="text-right">
-                <p className="text-[9px] font-black uppercase tracking-widest opacity-50">View Archive</p>
-                <p className="text-sm font-bold">More on GitHub</p>
-              </div>
-              <Github size={24} className="group-hover:rotate-12 transition-transform" />
-            </a>
-          </div>
+       {/* 4. FEATURED WORKS SECTION */}
+<section id="work" className="py-12 md:py-12 border-t border-white/5">
+  <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+    <div className="space-y-4">
+      <h2 className="text-[10px] uppercase tracking-[0.6em] text-blue-500 font-black flex items-center gap-3">
+        <div className="w-8 h-[1px] bg-blue-500"></div> Portfolio Selection
+      </h2>
+      <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
+        Featured <br/> <span className="text-neutral-800 italic">Projects.</span>
+      </h3>
+    </div>
+    <a href="https://github.com/Kaifkhurshid7" target="_blank" className="group flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-4 rounded-2xl hover:bg-white hover:text-black transition-all duration-500">
+      <div className="text-right">
+        <p className="text-[9px] font-black uppercase tracking-widest opacity-50">View Archive</p>
+        <p className="text-sm font-bold">More on GitHub</p>
+      </div>
+      <Github size={24} className="group-hover:rotate-12 transition-transform" />
+    </a>
+  </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-            {[
-              {
-                title: "ACM-XIM Envoy",
-                type: "Fullstack System",
-                desc: "A real-time engagement platform for the ACM Student Chapter. Features secure JWT authentication and Socket.io messaging.",
-                tech: ["Node.js", "MongoDB", "Socket.io", "React"],
-                github: "https://github.com/Kaifkhurshid7/ACM-XIM-Envoy",
-              },
-              {
-                title: "Instrument Recognition",
-                type: "AI & Signal Processing",
-                desc: "A machine learning pipeline for musical instrument identification using Librosa for spectral feature extraction.",
-                tech: ["Python", "Flask", "Librosa", "TensorFlow"],
-                github: "https://github.com/Kaifkhurshid7/Instrument-Recognition",
-              }
-            ].map((project, i) => (
-              <div key={i} className="group relative bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] overflow-hidden hover:border-blue-500/30 transition-all duration-700 p-8 md:p-12 flex flex-col h-full">
-                <div className="flex justify-between items-start mb-8">
-                  <div className="p-4 bg-white/5 rounded-2xl"><Code className="text-blue-500" size={24} /></div>
-                  <div className="flex gap-3">
-                    <a href={project.github} className="p-3 bg-white/5 hover:bg-white hover:text-black rounded-full transition-all"><Github size={20} /></a>
-                    <a href="#" className="p-3 bg-white/5 hover:bg-white hover:text-black rounded-full transition-all"><ExternalLink size={20} /></a>
-                  </div>
-                </div>
-                <div className="flex-grow">
-                  <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em] mb-3">{project.type}</p>
-                  <h4 className="text-3xl md:text-4xl font-black text-white mb-6 group-hover:italic transition-all">{project.title}</h4>
-                  <p className="text-neutral-500 text-sm leading-relaxed mb-8">{project.desc}</p>
-                </div>
-                <div className="flex flex-wrap gap-2 pt-8 border-t border-white/5">
-                  {project.tech.map(tag => (
-                    <span key={tag} className="text-[9px] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 rounded-full text-neutral-400">{tag}</span>
-                  ))}
-                </div>
-              </div>
-            ))}
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+    {[
+      {
+        title: "ACM-XIM Envoy",
+        type: "Fullstack System",
+        desc: "A real-time engagement platform for the ACM Student Chapter. Features secure JWT authentication and Socket.io messaging.",
+        tech: ["Node.js", "MongoDB", "Socket.io", "React"],
+        github: "https://github.com/Kaifkhurshid7/ACM-XIM-Envoy",
+        live: "https://acmmedia-frontend.vercel.app/",
+      },
+      {
+        title: "Instrument Recognition",
+        type: "AI & Signal Processing",
+        desc: "A machine learning pipeline for musical instrument identification using Librosa for spectral feature extraction.",
+        tech: ["Python", "Flask", "Librosa", "TensorFlow"],
+        github: "https://github.com/Kaifkhurshid7/Instrument-Recognition",
+        live: null,
+      }
+    ].map((project, i) => (
+      <div key={i} className="group relative bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] overflow-hidden hover:border-blue-500/30 transition-all duration-700 p-8 md:p-12 flex flex-col h-full">
+        <div className="flex justify-between items-start mb-8">
+          <div className="p-4 bg-white/5 rounded-2xl"><Code className="text-blue-500" size={24} /></div>
+          <div className="flex gap-3">
+            <a href={project.github} target="_blank" rel="noreferrer" className="p-3 bg-white/5 hover:bg-white hover:text-black rounded-full transition-all">
+              <Github size={20} />
+            </a>
+            {project.live && (
+              <a href={project.live} target="_blank" rel="noreferrer" className="p-3 bg-white/5 hover:bg-blue-500 hover:text-white rounded-full transition-all">
+                <ExternalLink size={20} />
+              </a>
+            )}
           </div>
-        </section>
+        </div>
+        <div className="flex-grow">
+          <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em] mb-3">{project.type}</p>
+          <h4 className="text-3xl md:text-4xl font-black text-white mb-6 group-hover:italic transition-all">{project.title}</h4>
+          <p className="text-neutral-500 text-sm leading-relaxed mb-8">{project.desc}</p>
+        </div>
+        <div className="flex flex-wrap gap-2 pt-8 border-t border-white/5">
+          {project.tech.map(tag => (
+            <span key={tag} className="text-[9px] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 rounded-full text-neutral-400">{tag}</span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 {/* 5. ACHIEVEMENTS & UNIVERSITY ACTIVITIES SECTION */}
         <section id="activities" className="py-12 md:py-12 border-t border-white/5">
           <div className="space-y-4 mb-20">
@@ -374,9 +382,10 @@ const App = () => {
                     <span className="text-[9px] font-black text-neutral-600 uppercase tracking-widest">Leadership</span>
                   </div>
                   <h5 className="text-white font-bold text-xl uppercase italic mb-2">Chairperson — ACM Chapter</h5>
-                  <p className="text-neutral-500 text-xs leading-relaxed mb-4">
-                    Leading a community of <span className="text-white">60+ student engineers</span>. Orchestrating technical workshops and fostering open-source culture at XIM University.
-                  </p>
+                 <p className="text-neutral-500 text-xs leading-relaxed mb-4">
+  As Chairperson, initiated and led a coding culture community and project development hub, guiding <span className="text-white">60+ students</span> to collaborate on real-world projects, enhance technical skills, and foster peer-driven learning at ACM XIM.
+</p>
+
                   <div className="flex flex-wrap gap-2">
                     <span className="text-[8px] font-bold text-blue-500/80 border border-blue-500/20 px-2 py-1 rounded-md uppercase">Strategy</span>
                     <span className="text-[8px] font-bold text-blue-500/80 border border-blue-500/20 px-2 py-1 rounded-md uppercase">Mentorship</span>
