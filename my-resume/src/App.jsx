@@ -88,9 +88,9 @@ const App = () => {
 
           <div className="lg:col-span-7 lg:order-1 text-center lg:text-left">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <h2 className="text-[10px] uppercase tracking-[0.5em] text-blue-500 font-black mb-6 flex items-center justify-center lg:justify-start gap-2">
-                <Zap size={12}/> Software Engineer & Student Leader
-              </h2>
+             <h2 className="text-[10px] uppercase tracking-[0.5em] text-blue-500 font-black mb-6 flex items-center justify-center lg:justify-start">
+  Software Engineer & Student Leader
+</h2>
               <h1 className="text-5xl md:text-[100px] leading-[0.85] font-black text-white tracking-tighter mb-8 uppercase">
                 Building <br/> <span className="text-neutral-700 italic">Scalable</span> <br/> Systems.
               </h1>
@@ -278,7 +278,7 @@ const App = () => {
               <div className="p-8 md:p-12 bg-gradient-to-br from-[#111] to-black border border-white/5 rounded-[3rem] group hover:border-blue-500/30 transition-all">
                 <div className="flex justify-between items-start mb-10">
                   <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500"><Sparkles size={32} /></div>
-                  <span className="text-[10px] font-black text-blue-500 uppercase tracking-widest border border-blue-500/20 px-4 py-2 rounded-full">Academic Honor</span>
+                  <span className="text-[10px] font-black text-blue-500 uppercase tracking-widest border border-blue-500/20 px-4 py-2 rounded-full">Innovation Award</span>
                 </div>
                 <h4 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase italic">Runner-up – Xamboree Fest Idea Competition</h4>
                 <p className="text-neutral-400 text-lg leading-relaxed mb-8">Awarded among participants from 30+ universities for designing and pitching a viable tech-driven solution.</p>
@@ -337,13 +337,13 @@ const App = () => {
                   </div>
                   <span className="text-[9px] font-black text-neutral-600 uppercase tracking-widest">Events</span>
                 </div>
-                <h5 className="text-white font-bold text-xl uppercase italic mb-2">Lead Organizer — HackXcelerate</h5>
+                <h5 className="text-white font-bold text-xl uppercase italic mb-2">Coordinator — Synchronize 4.0</h5>
                 <p className="text-neutral-500 text-xs leading-relaxed">
-                  Managed end-to-end execution of a <span className="text-white">24-hour university hackathon</span>. Handled judging criteria and sponsorship outreach.
+                  Managing end-to-end execution of a <span className="text-white">2- days Technical Fest </span>. Team of 100+ Members.
                 </p>
               </div>
             </div>
-          </div> {/* This closing tag for grid lg:grid-cols-12 was missing/misplaced */}
+          </div> 
         </section>
 
         {/* 6. CONTACT & FOOTER */}
