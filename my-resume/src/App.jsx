@@ -92,7 +92,7 @@ const App = () => {
                 Building <br/> <span className="text-neutral-700 italic">Scalable</span> <br/> Systems.
               </h1>
               <p className="text-lg md:text-xl text-white/80 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-                As the Chairperson of ACM Student Chapter at XIM University, I engineer intelligent backend solutions and bridge the gap between AI and core architecture.
+Kaif Khurshid is a pre-final year B.Tech (Hons.) CSE student at XIM University, Bhubaneswar, passionate about building impactful solutions. He works with the MERN stack and is actively exploring Data Science and Machine Learning, while strengthening his problem-solving and core computer science fundamentals. Strongly inclined toward entrepreneurship and leadership, with a focus on innovation and collaboration.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
@@ -108,34 +108,97 @@ const App = () => {
           </div>
         </section>
 
-        {/* 3. BENTO SKILLS: FULLY STACKABLE GRID */}
-        <section id="tech" className="py-20 border-t border-white/5">
-          <h2 className="text-[10px] uppercase tracking-[0.4em] text-neutral-600 font-bold mb-12 text-center">Technical Stack</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            
-            {/* CARD 1 */}
-            <div className="p-8 bg-[#0c0c0c] border border-white/5 rounded-[2rem] group hover:border-blue-500/50 transition-all">
-              <Terminal className="text-blue-500 mb-6" size={32}/>
-              <h3 className="text-white font-bold mb-4 uppercase tracking-widest text-xs">Core Tech</h3>
-              <p className="text-sm leading-relaxed text-gray-500">Python, Java, Node.js, Express, Flask, MySQL, MongoDB</p>
-            </div>
+     {/* TECHNICAL ARSENAL SECTION */}
+<section id="tech" className="py-24 md:py-32 bg-[#050505] border-t border-white/5 px-6">
+  <div className="max-w-7xl mx-auto">
+    
+    {/* Section Header */}
+    <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 gap-8">
+      <div className="space-y-4">
+        <h2 className="text-[10px] uppercase tracking-[0.6em] text-blue-500 font-black flex items-center gap-3">
+          <div className="w-8 h-[1px] bg-blue-500"></div> Technical Capabilities
+        </h2>
+        <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
+          The <span className="text-neutral-800 italic">Arsenal.</span>
+        </h3>
+      </div>
+      <div className="max-w-xs text-right hidden md:block border-l border-white/10 pl-6">
+        <p className="text-xs text-neutral-500 font-medium leading-relaxed uppercase tracking-widest">
+          Specialized in backend architectures, machine learning integration, and scalable system design.
+        </p>
+      </div>
+    </div>
 
-            {/* CARD 2 */}
-            <div className="p-8 bg-[#0c0c0c] border border-white/5 rounded-[2rem] group hover:border-purple-500/50 transition-all">
-              <Brain className="text-purple-500 mb-6" size={32}/>
-              <h3 className="text-white font-bold mb-4 uppercase tracking-widest text-xs">AI & ML</h3>
-              <p className="text-sm leading-relaxed text-gray-500">TensorFlow, Scikit-Learn, OpenCV, NLP, Data Analytics</p>
-            </div>
+    {/* The Modular Bento Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      
+      {/* CARD 1: CORE LANGUAGES */}
+      <div className="group relative p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:bg-[#0f0f0f] hover:border-blue-500/30 transition-all duration-500">
+        <Terminal className="text-blue-500 mb-8 group-hover:scale-110 transition-transform" size={32}/>
+        <h4 className="text-white font-black text-lg mb-6 tracking-widest uppercase italic">Languages</h4>
+        <ul className="space-y-3">
+          {['Python', 'Java', 'C / C++', 'JavaScript', 'SQL'].map((lang) => (
+            <li key={lang} className="flex items-center justify-between group/item border-b border-white/5 pb-2">
+              <span className="text-sm text-neutral-400 group-hover/item:text-white transition-colors">{lang}</span>
+              <div className="w-1 h-1 rounded-full bg-neutral-800 group-hover/item:bg-blue-500"></div>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-            {/* CARD 3 - SPANS FULL WIDTH ON TABLET */}
-            <div className="md:col-span-2 lg:col-span-1 p-8 bg-white text-black rounded-[2rem]">
-              <Award className="mb-6" size={32}/>
-              <h3 className="font-black mb-2 uppercase tracking-tight text-xl">ACM Chairperson</h3>
-              <p className="text-xs font-bold opacity-60 uppercase tracking-widest leading-relaxed">Leading tech community & 60+ members at XIM University.</p>
-            </div>
+      {/* CARD 2: BACKEND ECOSYSTEM */}
+      <div className="group relative p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:bg-[#0f0f0f] hover:border-purple-500/30 transition-all duration-500">
+        <Database className="text-purple-500 mb-8 group-hover:scale-110 transition-transform" size={32}/>
+        <h4 className="text-white font-black text-lg mb-6 tracking-widest uppercase italic">Backend</h4>
+        <div className="space-y-5">
+          <div>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-600 mb-2 font-bold">Frameworks</p>
+            <p className="text-xs text-neutral-300 font-mono">Node.js, Express, Flask</p>
           </div>
-        </section>
+          <div>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-600 mb-2 font-bold">Persistence</p>
+            <p className="text-xs text-neutral-300 font-mono">MySQL, MongoDB, Redis</p>
+          </div>
+          <div>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-600 mb-2 font-bold">Infrastructure</p>
+            <p className="text-xs text-neutral-300 font-mono">Docker, Git, AWS S3/EC2</p>
+          </div>
+        </div>
+      </div>
 
+      {/* CARD 3: ML & DATA */}
+      <div className="group relative p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:bg-[#0f0f0f] hover:border-green-500/30 transition-all duration-500">
+        <Brain className="text-green-500 mb-8 group-hover:scale-110 transition-transform" size={32}/>
+        <h4 className="text-white font-black text-lg mb-6 tracking-widest uppercase italic">AI & Research</h4>
+        <div className="grid grid-cols-2 gap-2">
+          {['TensorFlow', 'Scikit-Learn', 'OpenCV', 'Pandas', 'NumPy', 'NLTK', 'Librosa'].map((tool) => (
+            <div key={tool} className="px-2 py-2 bg-white/5 border border-white/5 rounded-lg text-[9px] text-center text-neutral-400 hover:text-white transition-colors">
+              {tool}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* CARD 4: HIGHLIGHT / LEADERSHIP */}
+      <div className="relative p-8 bg-white rounded-[2.5rem] flex flex-col justify-between overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.05)]">
+        <div className="relative z-10">
+          <Award className="text-black mb-6" size={32}/>
+          <h4 className="text-black font-black text-2xl mb-4 leading-tight tracking-tighter uppercase italic">ACM <br/> Leadership</h4>
+          <p className="text-black/60 text-[11px] font-bold uppercase tracking-widest leading-relaxed">
+            Chairperson @ Student Chapter. Managing a community of 60+ engineers.
+          </p>
+        </div>
+        <div className="mt-8 pt-4 border-t border-black/10 flex justify-between items-center text-black font-black text-[10px] tracking-widest uppercase">
+          <span>XIM University</span>
+          <ChevronRight size={14} />
+        </div>
+        {/* Background Decorative Icon */}
+        <Code className="absolute -bottom-6 -right-6 text-black/5" size={160} />
+      </div>
+
+    </div>
+  </div>
+</section>
         {/* 4. WORK SECTION: CLEAN CARDS */}
         <section id="work" className="py-20">
           <div className="space-y-4">
