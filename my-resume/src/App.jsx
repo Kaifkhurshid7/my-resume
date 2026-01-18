@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Github, Linkedin, Mail, Download, Terminal, 
   Database, Brain, Globe, ExternalLink, Menu, X, 
-  Zap, Award, ChevronRight, Code
+  Zap, Award, ChevronRight, Code, Sparkles, MapPin, Calendar, GraduationCap
 } from 'lucide-react';
 
 const App = () => {
@@ -13,6 +13,7 @@ const App = () => {
     { name: 'Intro', id: 'home' },
     { name: 'Tech', id: 'tech' },
     { name: 'Work', id: 'work' },
+    { name: 'Activities', id: 'activities' }, // Added new link
     { name: 'Contact', id: 'contact' }
   ];
 
@@ -62,10 +63,8 @@ const App = () => {
 
       <main className="max-w-7xl mx-auto px-6">
         
-        {/* 2. HERO SECTION: PHOTO FIRST ON MOBILE, ASYMMETRICAL ON DESKTOP */}
+        {/* 2. HERO SECTION */}
         <section id="home" className="pt-32 md:pt-48 pb-20 flex flex-col lg:grid lg:grid-cols-12 gap-12 lg:gap-16 items-center lg:items-start">
-          
-          {/* PHOTO: COMES FIRST ON MOBILE */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
             className="w-full max-w-sm lg:max-w-none lg:col-span-5 lg:order-2 relative"
@@ -82,7 +81,6 @@ const App = () => {
             </div>
           </motion.div>
 
-          {/* DESCRIPTION: COMES SECOND ON MOBILE */}
           <div className="lg:col-span-7 lg:order-1 text-center lg:text-left">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-[10px] uppercase tracking-[0.5em] text-blue-500 font-black mb-6 flex items-center justify-center lg:justify-start gap-2">
@@ -92,7 +90,7 @@ const App = () => {
                 Building <br/> <span className="text-neutral-700 italic">Scalable</span> <br/> Systems.
               </h1>
               <p className="text-lg md:text-xl text-white/80 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-Kaif Khurshid is a pre-final year B.Tech (Hons.) CSE student at XIM University, Bhubaneswar, passionate about building impactful solutions. He works with the MERN stack and is actively exploring Data Science and Machine Learning, while strengthening his problem-solving and core computer science fundamentals. Strongly inclined toward entrepreneurship and leadership, with a focus on innovation and collaboration.
+                Kaif Khurshid is a pre-final year B.Tech (Hons.) CSE student at XIM University, Bhubaneswar, passionate about building impactful solutions. He works with the MERN stack and is actively exploring Data Science and Machine Learning.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
@@ -108,198 +106,226 @@ Kaif Khurshid is a pre-final year B.Tech (Hons.) CSE student at XIM University, 
           </div>
         </section>
 
-     {/* TECHNICAL ARSENAL SECTION */}
-<section id="tech" className="py-24 md:py-32 bg-[#050505] border-t border-white/5 px-6">
-  <div className="max-w-7xl mx-auto">
-    
-    {/* Section Header */}
-    <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 gap-8">
-      <div className="space-y-4">
-        <h2 className="text-[10px] uppercase tracking-[0.6em] text-blue-500 font-black flex items-center gap-3">
-          <div className="w-8 h-[1px] bg-blue-500"></div> Technical Capabilities
-        </h2>
-        <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
-          The <span className="text-neutral-800 italic">Arsenal.</span>
-        </h3>
-      </div>
-      <div className="max-w-xs text-right hidden md:block border-l border-white/10 pl-6">
-        <p className="text-xs text-neutral-500 font-medium leading-relaxed uppercase tracking-widest">
-          Specialized in backend architectures, machine learning integration, and scalable system design.
-        </p>
-      </div>
-    </div>
-
-    {/* The Modular Bento Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-      
-      {/* CARD 1: CORE LANGUAGES */}
-      <div className="group relative p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:bg-[#0f0f0f] hover:border-blue-500/30 transition-all duration-500">
-        <Terminal className="text-blue-500 mb-8 group-hover:scale-110 transition-transform" size={32}/>
-        <h4 className="text-white font-black text-lg mb-6 tracking-widest uppercase italic">Languages</h4>
-        <ul className="space-y-3">
-          {['Python', 'Java', 'C / C++', 'JavaScript', 'SQL'].map((lang) => (
-            <li key={lang} className="flex items-center justify-between group/item border-b border-white/5 pb-2">
-              <span className="text-sm text-neutral-400 group-hover/item:text-white transition-colors">{lang}</span>
-              <div className="w-1 h-1 rounded-full bg-neutral-800 group-hover/item:bg-blue-500"></div>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* CARD 2: BACKEND ECOSYSTEM */}
-      <div className="group relative p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:bg-[#0f0f0f] hover:border-purple-500/30 transition-all duration-500">
-        <Database className="text-purple-500 mb-8 group-hover:scale-110 transition-transform" size={32}/>
-        <h4 className="text-white font-black text-lg mb-6 tracking-widest uppercase italic">Backend</h4>
-        <div className="space-y-5">
-          <div>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-600 mb-2 font-bold">Frameworks</p>
-            <p className="text-xs text-neutral-300 font-mono">Node.js, Express, Flask</p>
-          </div>
-          <div>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-600 mb-2 font-bold">Persistence</p>
-            <p className="text-xs text-neutral-300 font-mono">MySQL, MongoDB, Redis</p>
-          </div>
-          <div>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-600 mb-2 font-bold">Infrastructure</p>
-            <p className="text-xs text-neutral-300 font-mono">Docker, Git, AWS S3/EC2</p>
-          </div>
-        </div>
-      </div>
-
-      {/* CARD 3: ML & DATA */}
-      <div className="group relative p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:bg-[#0f0f0f] hover:border-green-500/30 transition-all duration-500">
-        <Brain className="text-green-500 mb-8 group-hover:scale-110 transition-transform" size={32}/>
-        <h4 className="text-white font-black text-lg mb-6 tracking-widest uppercase italic">AI & Research</h4>
-        <div className="grid grid-cols-2 gap-2">
-          {['TensorFlow', 'Scikit-Learn', 'OpenCV', 'Pandas', 'NumPy', 'NLTK', 'Librosa'].map((tool) => (
-            <div key={tool} className="px-2 py-2 bg-white/5 border border-white/5 rounded-lg text-[9px] text-center text-neutral-400 hover:text-white transition-colors">
-              {tool}
+        {/* 3. TECHNICAL ARSENAL SECTION */}
+        <section id="tech" className="py-24 md:py-32 bg-[#050505] border-t border-white/5">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 gap-8">
+            <div className="space-y-4">
+              <h2 className="text-[10px] uppercase tracking-[0.6em] text-blue-500 font-black flex items-center gap-3">
+                <div className="w-8 h-[1px] bg-blue-500"></div> Technical Capabilities
+              </h2>
+              <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
+                The <span className="text-neutral-800 italic">Arsenal.</span>
+              </h3>
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* CARD 4: HIGHLIGHT / LEADERSHIP */}
-      <div className="relative p-8 bg-white rounded-[2.5rem] flex flex-col justify-between overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.05)]">
-        <div className="relative z-10">
-          <Award className="text-black mb-6" size={32}/>
-          <h4 className="text-black font-black text-2xl mb-4 leading-tight tracking-tighter uppercase italic">ACM <br/> Leadership</h4>
-          <p className="text-black/60 text-[11px] font-bold uppercase tracking-widest leading-relaxed">
-            Chairperson @ Student Chapter. Managing a community of 60+ engineers.
-          </p>
-        </div>
-        <div className="mt-8 pt-4 border-t border-black/10 flex justify-between items-center text-black font-black text-[10px] tracking-widest uppercase">
-          <span>XIM University</span>
-          <ChevronRight size={14} />
-        </div>
-        {/* Background Decorative Icon */}
-        <Code className="absolute -bottom-6 -right-6 text-black/5" size={160} />
-      </div>
-
-    </div>
-  </div>
-</section>
-{/* FEATURED WORKS SECTION */}
-<section id="work" className="py-24 md:py-32 px-6 bg-[#050505]">
-  <div className="max-w-7xl mx-auto">
-    
-    {/* Section Header */}
-    <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-      <div className="space-y-4">
-        <h2 className="text-[10px] uppercase tracking-[0.6em] text-blue-500 font-black flex items-center gap-3">
-          <div className="w-8 h-[1px] bg-blue-500"></div> Portfolio Selection
-        </h2>
-        <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
-          Featured <br/> <span className="text-neutral-800 italic">Projects.</span>
-        </h3>
-      </div>
-      
-      {/* Sidebar-style GitHub Link for Mobile/Desktop */}
-      <a 
-        href="https://github.com/Kaifkhurshid7" 
-        target="_blank" 
-        className="group flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-4 rounded-2xl hover:bg-white hover:text-black transition-all duration-500"
-      >
-        <div className="text-right">
-          <p className="text-[9px] font-black uppercase tracking-widest opacity-50">View Archive</p>
-          <p className="text-sm font-bold">More on GitHub</p>
-        </div>
-        <Github size={24} className="group-hover:rotate-12 transition-transform" />
-      </a>
-    </div>
-
-    {/* Project Grid */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-      {[
-        {
-          title: "ACM-XIM Envoy",
-          type: "Fullstack System",
-          desc: "A real-time engagement and communication platform designed for the ACM Student Chapter. Features secure JWT authentication, real-time messaging via Socket.io, and a modular dashboard.",
-          tech: ["Node.js", "MongoDB", "Socket.io", "React"],
-          github: "https://github.com/Kaifkhurshid7/ACM-XIM-Envoy",
-          live: "#"
-        },
-        {
-          title: "Instrument Recognition",
-          type: "AI & Signal Processing",
-          desc: "A machine learning pipeline for automated musical instrument identification. Utilizes Librosa for spectral feature extraction and a custom-trained model for high-accuracy classification.",
-          tech: ["Python", "Flask", "Librosa", "TensorFlow"],
-          github: "https://github.com/Kaifkhurshid7/Instrument-Recognition",
-          live: "#"
-        }
-      ].map((project, i) => (
-        <div key={i} className="group relative bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] overflow-hidden hover:border-blue-500/30 transition-all duration-700">
-          
-          {/* Decorative Background Glow */}
-          <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-500/5 blur-[100px] group-hover:bg-blue-500/10 transition-all"></div>
-          
-          <div className="p-8 md:p-12 flex flex-col h-full">
-            <div className="flex justify-between items-start mb-8">
-              <div className="p-4 bg-white/5 rounded-2xl">
-                <Code className="text-blue-500" size={24} />
-              </div>
-              <div className="flex gap-3">
-                <a href={project.github} className="p-3 bg-white/5 hover:bg-white hover:text-black rounded-full transition-all">
-                  <Github size={20} />
-                </a>
-                <a href={project.live} className="p-3 bg-white/5 hover:bg-white hover:text-black rounded-full transition-all">
-                  <ExternalLink size={20} />
-                </a>
-              </div>
-            </div>
-
-            <div className="flex-grow">
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em] mb-3">{project.type}</p>
-              <h4 className="text-3xl md:text-4xl font-black text-white mb-6 group-hover:italic transition-all">{project.title}</h4>
-              <p className="text-neutral-500 text-sm leading-relaxed mb-8 max-w-md">
-                {project.desc}
+            <div className="max-w-xs text-right hidden md:block border-l border-white/10 pl-6">
+              <p className="text-xs text-neutral-500 font-medium leading-relaxed uppercase tracking-widest">
+                Specialized in backend architectures, machine learning integration, and scalable system design.
               </p>
             </div>
+          </div>
 
-            {/* Tech Tags */}
-            <div className="flex flex-wrap gap-2 pt-8 border-t border-white/5">
-              {project.tech.map(tag => (
-                <span key={tag} className="text-[9px] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 rounded-full text-neutral-400">
-                  {tag}
-                </span>
-              ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className="group relative p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:bg-[#0f0f0f] hover:border-blue-500/30 transition-all duration-500">
+              <Terminal className="text-blue-500 mb-8 group-hover:scale-110 transition-transform" size={32}/>
+              <h4 className="text-white font-black text-lg mb-6 tracking-widest uppercase italic">Languages</h4>
+              <ul className="space-y-3">
+                {['Python', 'Java', 'C / C++', 'JavaScript', 'SQL'].map((lang) => (
+                  <li key={lang} className="flex items-center justify-between group/item border-b border-white/5 pb-2">
+                    <span className="text-sm text-neutral-400 group-hover/item:text-white transition-colors">{lang}</span>
+                    <div className="w-1 h-1 rounded-full bg-neutral-800 group-hover/item:bg-blue-500"></div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="group relative p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:bg-[#0f0f0f] hover:border-purple-500/30 transition-all duration-500">
+              <Database className="text-purple-500 mb-8 group-hover:scale-110 transition-transform" size={32}/>
+              <h4 className="text-white font-black text-lg mb-6 tracking-widest uppercase italic">Backend</h4>
+              <div className="space-y-5">
+                <div>
+                  <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-600 mb-2 font-bold">Frameworks</p>
+                  <p className="text-xs text-neutral-300 font-mono">Node.js, Express, Flask</p>
+                </div>
+                <div>
+                  <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-600 mb-2 font-bold">Persistence</p>
+                  <p className="text-xs text-neutral-300 font-mono">MySQL, MongoDB, Redis</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group relative p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:bg-[#0f0f0f] hover:border-green-500/30 transition-all duration-500">
+              <Brain className="text-green-500 mb-8 group-hover:scale-110 transition-transform" size={32}/>
+              <h4 className="text-white font-black text-lg mb-6 tracking-widest uppercase italic">AI & Research</h4>
+              <div className="grid grid-cols-2 gap-2">
+                {['TensorFlow', 'Scikit-Learn', 'OpenCV', 'Pandas', 'NumPy', 'NLTK'].map((tool) => (
+                  <div key={tool} className="px-2 py-2 bg-white/5 border border-white/5 rounded-lg text-[9px] text-center text-neutral-400 hover:text-white transition-colors">
+                    {tool}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative p-8 bg-white rounded-[2.5rem] flex flex-col justify-between overflow-hidden">
+              <div className="relative z-10">
+                <Award className="text-black mb-6" size={32}/>
+                <h4 className="text-black font-black text-2xl mb-4 leading-tight tracking-tighter uppercase italic">ACM Leadership</h4>
+                <p className="text-black/60 text-[11px] font-bold uppercase tracking-widest leading-relaxed">
+                  Chairperson @ Student Chapter. Managing a community of 60+ engineers.
+                </p>
+              </div>
+              <div className="mt-8 pt-4 border-t border-black/10 flex justify-between items-center text-black font-black text-[10px] tracking-widest uppercase">
+                <span>XIM University</span>
+                <ChevronRight size={14} />
+              </div>
+              <Code className="absolute -bottom-6 -right-6 text-black/5" size={160} />
             </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+        </section>
 
-        {/* 5. CONTACT & FOOTER */}
-        <footer id="contact" className="py-24 text-center border-t border-white/5">
-          <h2 className="text-4xl md:text-8xl font-black text-white tracking-tighter mb-10 uppercase">Let's <br/> Connect.</h2>
-          <div className="flex flex-wrap justify-center gap-8 mb-20">
-            <a href="mailto:kaifkhurshid18@gmail.com" className="text-sm font-bold text-neutral-500 hover:text-white underline underline-offset-8 transition-colors">EMAIL</a>
-            <a href="https://linkedin.com/in/kaif-khurshid" className="text-sm font-bold text-neutral-500 hover:text-white underline underline-offset-8 transition-colors">LINKEDIN</a>
-            <a href="https://github.com/Kaifkhurshid7" className="text-sm font-bold text-neutral-500 hover:text-white underline underline-offset-8 transition-colors">GITHUB</a>
+        {/* 4. FEATURED WORKS SECTION */}
+        <section id="work" className="py-24 md:py-32 border-t border-white/5">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div className="space-y-4">
+              <h2 className="text-[10px] uppercase tracking-[0.6em] text-blue-500 font-black flex items-center gap-3">
+                <div className="w-8 h-[1px] bg-blue-500"></div> Portfolio Selection
+              </h2>
+              <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
+                Featured <br/> <span className="text-neutral-800 italic">Projects.</span>
+              </h3>
+            </div>
+            <a href="https://github.com/Kaifkhurshid7" target="_blank" className="group flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-4 rounded-2xl hover:bg-white hover:text-black transition-all duration-500">
+              <div className="text-right">
+                <p className="text-[9px] font-black uppercase tracking-widest opacity-50">View Archive</p>
+                <p className="text-sm font-bold">More on GitHub</p>
+              </div>
+              <Github size={24} className="group-hover:rotate-12 transition-transform" />
+            </a>
           </div>
-          <p className="text-[10px] uppercase tracking-[0.5em] text-neutral-800">© 2026 KAIF KHURSHID • XIM UNIVERSITY</p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            {[
+              {
+                title: "ACM-XIM Envoy",
+                type: "Fullstack System",
+                desc: "A real-time engagement platform for the ACM Student Chapter. Features secure JWT authentication and Socket.io messaging.",
+                tech: ["Node.js", "MongoDB", "Socket.io", "React"],
+                github: "https://github.com/Kaifkhurshid7/ACM-XIM-Envoy",
+              },
+              {
+                title: "Instrument Recognition",
+                type: "AI & Signal Processing",
+                desc: "A machine learning pipeline for musical instrument identification using Librosa for spectral feature extraction.",
+                tech: ["Python", "Flask", "Librosa", "TensorFlow"],
+                github: "https://github.com/Kaifkhurshid7/Instrument-Recognition",
+              }
+            ].map((project, i) => (
+              <div key={i} className="group relative bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] overflow-hidden hover:border-blue-500/30 transition-all duration-700 p-8 md:p-12 flex flex-col h-full">
+                <div className="flex justify-between items-start mb-8">
+                  <div className="p-4 bg-white/5 rounded-2xl"><Code className="text-blue-500" size={24} /></div>
+                  <div className="flex gap-3">
+                    <a href={project.github} className="p-3 bg-white/5 hover:bg-white hover:text-black rounded-full transition-all"><Github size={20} /></a>
+                    <a href="#" className="p-3 bg-white/5 hover:bg-white hover:text-black rounded-full transition-all"><ExternalLink size={20} /></a>
+                  </div>
+                </div>
+                <div className="flex-grow">
+                  <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em] mb-3">{project.type}</p>
+                  <h4 className="text-3xl md:text-4xl font-black text-white mb-6 group-hover:italic transition-all">{project.title}</h4>
+                  <p className="text-neutral-500 text-sm leading-relaxed mb-8">{project.desc}</p>
+                </div>
+                <div className="flex flex-wrap gap-2 pt-8 border-t border-white/5">
+                  {project.tech.map(tag => (
+                    <span key={tag} className="text-[9px] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 rounded-full text-neutral-400">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 5. ACHIEVEMENTS & UNIVERSITY ACTIVITIES SECTION */}
+        <section id="activities" className="py-24 md:py-32 border-t border-white/5">
+          <div className="space-y-4 mb-20">
+            <h2 className="text-[10px] uppercase tracking-[0.6em] text-yellow-500 font-black flex items-center gap-3">
+              <Award size={14} /> Honors & Impact
+            </h2>
+            <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
+              Beyond the <br/> <span className="text-neutral-800 italic">Codebase.</span>
+            </h3>
+          </div>
+
+          <div className="grid lg:grid-cols-12 gap-8 items-start">
+            {/* Major Achievement */}
+            <div className="lg:col-span-7 p-8 md:p-12 bg-gradient-to-br from-[#111] to-black border border-white/5 rounded-[3rem] group hover:border-yellow-500/30 transition-all">
+              <div className="flex justify-between items-start mb-10">
+                <div className="w-16 h-16 bg-yellow-500/10 rounded-2xl flex items-center justify-center text-yellow-500"><Award size={32} /></div>
+                <span className="text-[10px] font-black text-yellow-500 uppercase tracking-widest border border-yellow-500/20 px-4 py-2 rounded-full">Indore Summit</span>
+              </div>
+              <h4 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase italic">1st Prize — ACM India Summit</h4>
+              <p className="text-neutral-400 text-lg leading-relaxed mb-8">Ranked #1 among 50+ nationwide teams. Recognized for outstanding technical innovation and community leadership within the ACM network.</p>
+              <div className="flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-neutral-600">
+                <div className="flex items-center gap-2"><MapPin size={12}/> Indore, India</div>
+                <div className="flex items-center gap-2"><Calendar size={12}/> 2024</div>
+              </div>
+            </div>
+            
+
+            {/* University Timeline */}
+            <div className="lg:col-span-5 bg-[#0a0a0a] border border-white/5 rounded-[3rem] p-8 md:p-12 relative overflow-hidden h-full">
+              <h4 className="text-xs font-black text-neutral-500 uppercase tracking-[0.4em] mb-12 italic">XIM University</h4>
+              <div className="space-y-12 relative">
+                <div className="absolute left-3 top-2 bottom-2 w-[1px] bg-white/5"></div>
+                {[
+                  { role: "Chairperson", org: "ACM Student Chapter", period: "Current" },
+                  { role: "Executive Member", org: "Career Service Advisory", period: "2024-25" },
+                  { role: "Lead Organizer", org: "HackXcelerate 2024", period: "2024" }
+                ].map((act, i) => (
+                  <div key={i} className="relative pl-10 group">
+                    <div className="absolute left-2 top-2 w-2 h-2 rounded-full bg-neutral-800 group-hover:bg-blue-500 transition-colors z-10 border-4 border-[#0a0a0a] box-content"></div>
+                    <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-1">{act.period}</p>
+                    <h5 className="text-white font-bold text-xl tracking-tight mb-1 uppercase italic">{act.role}</h5>
+                    <p className="text-neutral-600 text-[10px] font-black uppercase tracking-widest">{act.org}</p>
+                  </div>
+                ))}
+              </div>
+              <GraduationCap className="absolute -bottom-10 -right-10 text-white/[0.02]" size={250} />
+            </div>
+          </div>
+        </section>
+
+        {/* 6. CONTACT & FOOTER */}
+        <footer id="contact" className="py-24 border-t border-white/5">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-5xl md:text-9xl font-black text-white tracking-tighter mb-12 uppercase leading-[0.8]">
+              Let's <br /> <span className="text-neutral-800 italic">Connect.</span>
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+              <a href="mailto:kaifkhurshid18@gmail.com" className="group p-8 bg-[#0a0a0a] border border-white/5 rounded-3xl hover:border-blue-500/50 transition-all">
+                <Mail className="mx-auto mb-4 text-neutral-600 group-hover:text-blue-500" size={24} />
+                <span className="block text-[10px] font-black text-neutral-600 uppercase tracking-widest mb-1">Email</span>
+                <span className="text-white font-bold text-sm">kaifkhurshid18@gmail.com</span>
+              </a>
+              <a href="https://linkedin.com/in/kaif-khurshid" target="_blank" className="group p-8 bg-[#0a0a0a] border border-white/5 rounded-3xl hover:border-blue-500/50 transition-all">
+                <Linkedin className="mx-auto mb-4 text-neutral-600 group-hover:text-blue-500" size={24} />
+                <span className="block text-[10px] font-black text-neutral-600 uppercase tracking-widest mb-1">LinkedIn</span>
+                <span className="text-white font-bold text-sm">/in/kaif-khurshid</span>
+              </a>
+              <a href="https://github.com/Kaifkhurshid7" target="_blank" className="group p-8 bg-[#0a0a0a] border border-white/5 rounded-3xl hover:border-blue-500/50 transition-all">
+                <Github className="mx-auto mb-4 text-neutral-600 group-hover:text-blue-500" size={24} />
+                <span className="block text-[10px] font-black text-neutral-600 uppercase tracking-widest mb-1">GitHub</span>
+                <span className="text-white font-bold text-sm">Kaifkhurshid7</span>
+              </a>
+            </div>
+
+            <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 gap-6 text-[10px] font-bold uppercase tracking-[0.4em] text-neutral-800">
+              <p>© 2026 KAIF KHURSHID • XIM UNIVERSITY</p>
+              <div className="flex gap-8">
+                <a href="#home" className="hover:text-white transition-colors">Back to top</a>
+                <span className="text-neutral-900">•</span>
+                <span>Software Engineer</span>
+              </div>
+            </div>
+          </div>
         </footer>
 
       </main>
