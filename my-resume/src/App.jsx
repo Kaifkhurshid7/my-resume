@@ -118,7 +118,7 @@ const App = () => {
                 <div className="w-8 h-[1px] bg-blue-500"></div> Technical Capabilities
               </h2>
               <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
-                The <span className="text-neutral-800 italic">Arsenal.</span>
+                My <span className="text-neutral-800 italic">Wallet.</span>
               </h3>
             </div>
             <div className="max-w-xs text-right hidden md:block border-l border-white/10 pl-6">
@@ -172,13 +172,13 @@ const App = () => {
             <div className="relative p-8 bg-white rounded-[2.5rem] flex flex-col justify-between overflow-hidden">
               <div className="relative z-10">
                 <Award className="text-black mb-6" size={32}/>
-                <h4 className="text-black font-black text-2xl mb-4 leading-tight tracking-tighter uppercase italic">ACM Leadership</h4>
+                <h4 className="text-black font-black text-2xl mb-4 leading-tight tracking-tighter uppercase italic">Current Learning</h4>
                 <p className="text-black/60 text-[11px] font-bold uppercase tracking-widest leading-relaxed">
-                  Chairperson @ Student Chapter. Managing a community of 60+ engineers.
+                  Machine Learning & AI Algorithm and data Science Concept.
                 </p>
               </div>
               <div className="mt-8 pt-4 border-t border-black/10 flex justify-between items-center text-black font-black text-[10px] tracking-widest uppercase">
-                <span>XIM University</span>
+                <span>For Data Sciene Role</span>
                 <ChevronRight size={14} />
               </div>
               <Code className="absolute -bottom-6 -right-6 text-black/5" size={160} />
