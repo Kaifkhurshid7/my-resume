@@ -134,7 +134,7 @@ const App = () => {
               <Terminal className="text-blue-500 mb-8 group-hover:scale-110 transition-transform" size={32}/>
               <h4 className="text-white font-black text-lg mb-6 tracking-widest uppercase italic">Languages</h4>
               <ul className="space-y-3">
-                {['Python', 'Java', 'C / C++', 'JavaScript', 'SQL'].map((lang) => (
+                {['Python', 'Java', 'C', 'JavaScript', 'SQL'].map((lang) => (
                   <li key={lang} className="flex items-center justify-between group/item border-b border-white/5 pb-2">
                     <span className="text-sm text-neutral-400 group-hover/item:text-white transition-colors">{lang}</span>
                     <div className="w-1 h-1 rounded-full bg-neutral-800 group-hover/item:bg-blue-500"></div>
@@ -173,7 +173,7 @@ const App = () => {
             <div className="relative p-8 bg-white rounded-[2.5rem] flex flex-col justify-between overflow-hidden">
               <div className="relative z-10">
                 <Award className="text-black mb-6" size={32}/>
-                <h4 className="text-black font-black text-2xl mb-4 leading-tight tracking-tighter uppercase italic">Current Learning</h4>
+                <h4 className="text-black font-black text-2xl mb-4 leading-tight tracking-tighter uppercase italic">Currently Learning</h4>
                 <p className="text-black/60 text-[11px] font-bold uppercase tracking-widest leading-relaxed">
                   Machine Learning & AI Algorithm and data Science Concept.
                 </p>
