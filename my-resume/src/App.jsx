@@ -199,28 +199,97 @@ Kaif Khurshid is a pre-final year B.Tech (Hons.) CSE student at XIM University, 
     </div>
   </div>
 </section>
-        {/* 4. WORK SECTION: CLEAN CARDS */}
-        <section id="work" className="py-20">
-          <div className="space-y-4">
-            {[
-              { title: "ACM-XIM Envoy", role: "Fullstack Platform", year: "2024" },
-              { title: "Instrument AI", role: "Signal Processing", year: "2025" }
-            ].map((p, i) => (
-              <div key={i} className="group border-b border-white/5 py-10 flex flex-col md:flex-row md:items-center justify-between transition-all px-4 hover:bg-white/5 rounded-2xl">
-                <div>
-                  <h3 className="text-3xl md:text-5xl font-black text-white group-hover:italic transition-all uppercase tracking-tighter">{p.title}</h3>
-                  <p className="text-gray-600 uppercase text-[10px] tracking-[0.3em] mt-2 font-bold">{p.role}</p>
-                </div>
-                <div className="mt-4 md:mt-0 flex items-center gap-4">
-                  <span className="text-neutral-700 font-mono">{p.year}</span>
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black opacity-0 group-hover:opacity-100 transition-all scale-0 group-hover:scale-100">
-                    <ExternalLink size={16}/>
-                  </div>
-                </div>
+{/* FEATURED WORKS SECTION */}
+<section id="work" className="py-24 md:py-32 px-6 bg-[#050505]">
+  <div className="max-w-7xl mx-auto">
+    
+    {/* Section Header */}
+    <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+      <div className="space-y-4">
+        <h2 className="text-[10px] uppercase tracking-[0.6em] text-blue-500 font-black flex items-center gap-3">
+          <div className="w-8 h-[1px] bg-blue-500"></div> Portfolio Selection
+        </h2>
+        <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
+          Featured <br/> <span className="text-neutral-800 italic">Projects.</span>
+        </h3>
+      </div>
+      
+      {/* Sidebar-style GitHub Link for Mobile/Desktop */}
+      <a 
+        href="https://github.com/Kaifkhurshid7" 
+        target="_blank" 
+        className="group flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-4 rounded-2xl hover:bg-white hover:text-black transition-all duration-500"
+      >
+        <div className="text-right">
+          <p className="text-[9px] font-black uppercase tracking-widest opacity-50">View Archive</p>
+          <p className="text-sm font-bold">More on GitHub</p>
+        </div>
+        <Github size={24} className="group-hover:rotate-12 transition-transform" />
+      </a>
+    </div>
+
+    {/* Project Grid */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+      {[
+        {
+          title: "ACM-XIM Envoy",
+          type: "Fullstack System",
+          desc: "A real-time engagement and communication platform designed for the ACM Student Chapter. Features secure JWT authentication, real-time messaging via Socket.io, and a modular dashboard.",
+          tech: ["Node.js", "MongoDB", "Socket.io", "React"],
+          github: "https://github.com/Kaifkhurshid7/ACM-XIM-Envoy",
+          live: "#"
+        },
+        {
+          title: "Instrument Recognition",
+          type: "AI & Signal Processing",
+          desc: "A machine learning pipeline for automated musical instrument identification. Utilizes Librosa for spectral feature extraction and a custom-trained model for high-accuracy classification.",
+          tech: ["Python", "Flask", "Librosa", "TensorFlow"],
+          github: "https://github.com/Kaifkhurshid7/Instrument-Recognition",
+          live: "#"
+        }
+      ].map((project, i) => (
+        <div key={i} className="group relative bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] overflow-hidden hover:border-blue-500/30 transition-all duration-700">
+          
+          {/* Decorative Background Glow */}
+          <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-500/5 blur-[100px] group-hover:bg-blue-500/10 transition-all"></div>
+          
+          <div className="p-8 md:p-12 flex flex-col h-full">
+            <div className="flex justify-between items-start mb-8">
+              <div className="p-4 bg-white/5 rounded-2xl">
+                <Code className="text-blue-500" size={24} />
               </div>
-            ))}
+              <div className="flex gap-3">
+                <a href={project.github} className="p-3 bg-white/5 hover:bg-white hover:text-black rounded-full transition-all">
+                  <Github size={20} />
+                </a>
+                <a href={project.live} className="p-3 bg-white/5 hover:bg-white hover:text-black rounded-full transition-all">
+                  <ExternalLink size={20} />
+                </a>
+              </div>
+            </div>
+
+            <div className="flex-grow">
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em] mb-3">{project.type}</p>
+              <h4 className="text-3xl md:text-4xl font-black text-white mb-6 group-hover:italic transition-all">{project.title}</h4>
+              <p className="text-neutral-500 text-sm leading-relaxed mb-8 max-w-md">
+                {project.desc}
+              </p>
+            </div>
+
+            {/* Tech Tags */}
+            <div className="flex flex-wrap gap-2 pt-8 border-t border-white/5">
+              {project.tech.map(tag => (
+                <span key={tag} className="text-[9px] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 rounded-full text-neutral-400">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-        </section>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
         {/* 5. CONTACT & FOOTER */}
         <footer id="contact" className="py-24 text-center border-t border-white/5">
