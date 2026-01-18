@@ -186,7 +186,76 @@ const App = () => {
             </div>
           </div>
         </section>
+{/* 3.5 EDUCATION SECTION */}
+        <section id="education" className="py-12 border-t border-white/5">
+          <div className="space-y-4 mb-12">
+            <h2 className="text-[10px] uppercase tracking-[0.6em] text-blue-500 font-black flex items-center gap-3">
+              <div className="w-8 h-[1px] bg-blue-500"></div> Academic Path
+            </h2>
+            <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
+              The <span className="text-neutral-800 italic">Timeline.</span>
+            </h3>
+          </div>
 
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
+            
+            {/* UNIVERSITY */}
+            <div className="lg:col-span-1 group p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:border-blue-500/30 transition-all duration-500 flex flex-col justify-between min-h-[300px]">
+              <div>
+                <div className="flex justify-between items-start mb-6">
+                  <GraduationCap className="text-blue-500" size={28} />
+                  <span className="text-[9px] font-black text-blue-500 border border-blue-500/20 px-3 py-1 rounded-full uppercase tracking-widest">Ongoing</span>
+                </div>
+                <h4 className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em] mb-2">B.Tech (Hons.)</h4>
+                <h5 className="text-2xl font-black text-white uppercase italic leading-tight mb-2">Computer Science & Engineering</h5>
+                <p className="text-xs text-neutral-400 font-bold uppercase tracking-widest">XIM University (New Campus)</p>
+              </div>
+              <div className="pt-6 border-t border-white/5 flex items-center gap-2">
+                <Calendar size={12} className="text-neutral-600" />
+                <span className="text-[10px] font-black text-neutral-600 uppercase tracking-[0.2em]">2022 — 2026</span>
+              </div>
+            </div>
+
+            {/* 12th GRADE */}
+            <div className="group p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:border-neutral-700 transition-all duration-500 flex flex-col justify-between min-h-[300px]">
+              <div>
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-neutral-400">
+                    <Code size={20} />
+                  </div>
+                  <span className="text-[9px] font-black text-neutral-600 border border-white/5 px-3 py-1 rounded-full uppercase tracking-widest">Completed</span>
+                </div>
+                <h4 className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em] mb-2">CBSE (Class XII)</h4>
+                <h5 className="text-2xl font-black text-white uppercase italic leading-tight mb-2">Senior Secondary <br/> Science</h5>
+                <p className="text-xs text-neutral-400 font-bold uppercase tracking-widest">Agrasen Dav Public School, Ramgarh Jharkhand</p>
+              </div>
+              <div className="pt-6 border-t border-white/5 flex items-center gap-2">
+                <Calendar size={12} className="text-neutral-600" />
+                <span className="text-[10px] font-black text-neutral-600 uppercase tracking-[0.2em]">2021 — 2023</span>
+              </div>
+            </div>
+
+            {/* 10th GRADE */}
+            <div className="group p-8 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:border-neutral-700 transition-all duration-500 flex flex-col justify-between min-h-[300px]">
+              <div>
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-neutral-400">
+                    <MapPin size={20} />
+                  </div>
+                  <span className="text-[9px] font-black text-neutral-600 border border-white/5 px-3 py-1 rounded-full uppercase tracking-widest">Completed</span>
+                </div>
+                <h4 className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em] mb-2">CBSE (Class X)</h4>
+                <h5 className="text-2xl font-black text-white uppercase italic leading-tight mb-2">Secondary <br/> Education</h5>
+                <p className="text-xs text-neutral-400 font-bold uppercase tracking-widest">Agrasen Dav Public School, Ramgarh Jharkhand</p>
+              </div>
+              <div className="pt-6 border-t border-white/5 flex items-center gap-2">
+                <Calendar size={12} className="text-neutral-600" />
+                <span className="text-[10px] font-black text-neutral-600 uppercase tracking-[0.2em]">2020 — 2021</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
         {/* 4. FEATURED WORKS SECTION */}
         <section id="work" className="py-12 md:py-12 border-t border-white/5">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
