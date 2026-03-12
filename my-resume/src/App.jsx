@@ -293,6 +293,22 @@ const App = () => {
         tech: ["Python", "Flask", "Librosa", "TensorFlow"],
         github: "https://github.com/Kaifkhurshid7/Instrument-Recognition",
         live: null,
+      },
+      {
+        title: "Swaralipi OCR System",
+        type: "OCR & Computer Vision",
+        desc: "An OCR-based recognition system for Indian musical notation that detects and classifies swara symbols from scanned manuscript images for structured digital transcription.",
+        tech: ["Python", "FastAPI", "YOLOv8", "PyTorch", "React", "TypeScript", "Vite", "SQLite"],
+        github: "https://github.com/Kaifkhurshid7/swara-detection",
+        live: null,
+      },
+      {
+        title: "Intelligent Node Detection System",
+        type: "Computer Vision & Graph Analysis",
+        desc: "An end-to-end computer vision pipeline that converts diagram images into directed graphs using OpenCV, OCR, NLP heuristics, and rule-based node reconstruction.",
+        tech: ["Python", "OpenCV", "OCR", "NLP", "Graph Analysis"],
+        github: "https://github.com/Kaifkhurshid7/intelligent-node-detection",
+        live: null,
       }
     ].map((project, i) => (
       <div key={i} className="group relative bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] overflow-hidden hover:border-blue-500/30 transition-all duration-700 p-8 md:p-12 flex flex-col h-full">
