@@ -82,14 +82,14 @@ const App = () => {
     />
   </div>
   <div className="absolute -bottom-4 -right-4 bg-white text-black px-6 py-3 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl">
-    Machine Learning Enthusiast
+    Data Science Enthusiast
   </div>
 </motion.div>
 
           <div className="lg:col-span-7 lg:order-1 text-center lg:text-left">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
              <h2 className="text-[10px] uppercase tracking-[0.5em] text-blue-500 font-black mb-6 flex items-center justify-center lg:justify-start">
-  Software Engineer & Student Leader
+  Software Engineer 
 </h2>
               <h1 className="text-5xl md:text-[100px] leading-[0.85] font-black text-white tracking-tighter mb-8 uppercase">
                 Building <br/> <span className="text-neutral-700 italic">Scalable</span> <br/> Systems.
@@ -212,7 +212,7 @@ const App = () => {
               </div>
               <div className="pt-6 border-t border-white/5 flex items-center gap-2">
                 <Calendar size={12} className="text-neutral-600" />
-                <span className="text-[10px] font-black text-neutral-600 uppercase tracking-[0.2em]">2022 — 2027</span>
+                <span className="text-[10px] font-black text-neutral-600 uppercase tracking-[0.2em]">2023 — 2027</span>
               </div>
             </div>
 
