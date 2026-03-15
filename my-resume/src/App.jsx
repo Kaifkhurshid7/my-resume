@@ -399,7 +399,7 @@ const App = () => {
                   </div>
                   <h5 className="text-white font-bold text-xl uppercase italic mb-2">Chairperson — ACM Chapter</h5>
                  <p className="text-neutral-500 text-xs leading-relaxed mb-4">
-  As Chairperson, initiated and led a coding culture community and project development hub, guiding <span className="text-white">60+ students</span> to collaborate on real-world projects, enhance technical skills, and foster peer-driven learning at ACM XIM.
+  Led ACM XIM as Chairperson by building a coding and project development community, mentoring <span className="text-white">60+ students</span> through real-world collaboration, technical upskilling, and peer-driven learning initiatives.
 </p>
 
                   <div className="flex flex-wrap gap-2">
@@ -419,7 +419,7 @@ const App = () => {
                 </div>
                 <h5 className="text-white font-bold text-xl uppercase italic mb-2">Executive — Career Advisory</h5>
                 <p className="text-neutral-500 text-xs leading-relaxed">
-                  Bridge between the student body and corporate recruiters. Coordinating peer-to-peer coding bootcamps for technical placement preparation.
+                  Served as a liaison between students and corporate recruiters, while organizing peer-to-peer coding bootcamps and guidance sessions to strengthen technical placement preparation.
                 </p>
               </div>
 
@@ -433,7 +433,7 @@ const App = () => {
                 </div>
                 <h5 className="text-white font-bold text-xl uppercase italic mb-2">Coordinator — Synchronize 4.0</h5>
                 <p className="text-neutral-500 text-xs leading-relaxed">
-                  Managing end-to-end execution of a <span className="text-white">2- days Technical Fest </span>. Team of 100+ Members.
+                  Coordinated <span className="text-white">Synchronize 4.0</span>, a 3-day annual technical fest at SCSE, XIM University, bringing together 700+ participants from 15+ colleges across Odisha. Led a team of 100+ volunteers and organizing committee members to execute technical, esports, robotics, and cultural events.
                 </p>
               </div>
             </div>
