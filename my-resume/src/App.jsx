@@ -3,6 +3,7 @@
  * @description Root application component — portfolio layout orchestrator.
  *
  * Responsibilities:
+ * - Manages intro loader visibility (letter-by-letter name → initials → exit)
  * - Manages mobile menu open/close state
  * - Composes all page sections in correct order
  * - Imports global stylesheet (loaded once at app root)
@@ -11,9 +12,10 @@
  * is a personal portfolio with smooth-scroll navigation between sections.
  */
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 // Layout
+import Loader from './components/layout/Loader';
 import Navbar from './components/layout/Navbar';
 import MobileMenu from './components/layout/MobileMenu';
 
@@ -30,10 +32,17 @@ import Footer from './components/sections/Footer';
 import './styles/global.css';
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleLoaderComplete = useCallback(() => {
+    setIsLoading(false);
+  }, []);
 
   return (
     <>
+      <Loader isVisible={isLoading} onComplete={handleLoaderComplete} />
+
       <Navbar onMenuOpen={() => setIsMenuOpen(true)} />
       <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
 

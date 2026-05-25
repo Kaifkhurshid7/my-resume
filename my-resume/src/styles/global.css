@@ -789,7 +789,58 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   12. MOBILE MENU
+   12. LOADER
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #0D0D0D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loader-name-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loader-letter {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(36px, 8vw, 72px);
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+.loader-label {
+  position: absolute;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.loader-tagline {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   13. MOBILE MENU
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 .mobile-menu {
@@ -804,7 +855,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   13. MARQUEE
+   14. MARQUEE
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 .marquee-wrap {
@@ -845,7 +896,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   14. RESPONSIVE BREAKPOINTS
+   15. RESPONSIVE BREAKPOINTS
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 900px) {
