@@ -1,1 +1,9 @@
+/**
+ * @file index.css
+ * @description Tailwind CSS entry point.
+ *
+ * Tailwind v4 uses a single @import directive. Additional utility
+ * layers or custom @layer rules can be added below if needed.
+ */
+
 @import "tailwindcss";
