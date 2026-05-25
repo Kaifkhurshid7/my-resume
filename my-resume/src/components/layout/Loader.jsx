@@ -6,8 +6,8 @@
  * 1. "Kaif Khurshid" appears letter by letter (staggered fade-in)
  * 2. Full name holds briefly
  * 3. All letters except "K" and "K" fade out
- * 4. Remaining "KK" holds centered
- * 5. Entire loader fades/slides out to reveal the site
+ * 4. Remaining "KK" centers with size contrast (big K + small K)
+ * 5. Entire loader fades out to reveal the site
  *
  * Scattered contextual labels appear around the edges for editorial feel.
  */
@@ -30,11 +30,11 @@ const LABELS = [
 
 /** Animation phases */
 const PHASE = {
-  TYPING: 'typing',       // Letters appear one by one
-  HOLD: 'hold',           // Full name visible
-  COLLAPSE: 'collapse',   // Non-initial letters fade out
-  INITIALS: 'initials',   // Only KK remains
-  EXIT: 'exit',           // Loader dismisses
+  TYPING: 'typing',
+  HOLD: 'hold',
+  COLLAPSE: 'collapse',
+  INITIALS: 'initials',
+  EXIT: 'exit',
 };
 
 const Loader = ({ isVisible, onComplete }) => {
@@ -44,39 +44,21 @@ const Loader = ({ isVisible, onComplete }) => {
     if (!isVisible) return;
 
     const timers = [
-      // Phase 1 → 2: After all letters have appeared (~1.5s)
       setTimeout(() => setPhase(PHASE.HOLD), 1600),
-      // Phase 2 → 3: Hold full name briefly
       setTimeout(() => setPhase(PHASE.COLLAPSE), 2200),
-      // Phase 3 → 4: After collapse animation
       setTimeout(() => setPhase(PHASE.INITIALS), 2800),
-      // Phase 4 → 5: Hold initials then exit
       setTimeout(() => {
         setPhase(PHASE.EXIT);
         if (onComplete) onComplete();
-      }, 3400),
+      }, 3500),
     ];
 
     return () => timers.forEach(clearTimeout);
   }, [isVisible, onComplete]);
 
   const isInitialLetter = (index) => INITIALS_INDICES.includes(index);
-
-  const getLetterOpacity = (index) => {
-    if (phase === PHASE.COLLAPSE || phase === PHASE.INITIALS || phase === PHASE.EXIT) {
-      return isInitialLetter(index) ? 1 : 0;
-    }
-    return 1;
-  };
-
-  const getLetterSpacing = (index) => {
-    // When collapsing, move initials closer together
-    if (phase === PHASE.INITIALS || phase === PHASE.EXIT) {
-      if (index === 0) return { x: 20 };
-      if (index === 5) return { x: -20 };
-    }
-    return { x: 0 };
-  };
+  const isInitialsPhase = phase === PHASE.INITIALS || phase === PHASE.EXIT;
+  const isCollapsingOrAfter = phase === PHASE.COLLAPSE || isInitialsPhase;
 
   return (
     <AnimatePresence>
@@ -102,43 +84,63 @@ const Loader = ({ isVisible, onComplete }) => {
             </motion.span>
           ))}
 
-          {/* Name / Initials — letter by letter */}
-          <div className="loader-name-wrap">
-            {FULL_NAME.split('').map((char, i) => (
-              <motion.span
-                key={i}
-                className="loader-letter"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{
-                  opacity: getLetterOpacity(i),
-                  y: 0,
-                  ...getLetterSpacing(i),
-                }}
-                transition={{
-                  opacity: {
-                    delay: phase === PHASE.TYPING ? i * 0.08 : 0,
-                    duration: phase === PHASE.COLLAPSE ? 0.4 : 0.3,
-                    ease: EASE_OUT_EXPO,
-                  },
-                  y: {
-                    delay: phase === PHASE.TYPING ? i * 0.08 : 0,
-                    duration: 0.4,
-                    ease: EASE_OUT_EXPO,
-                  },
-                  x: {
-                    duration: 0.5,
-                    ease: EASE_OUT_EXPO,
-                  },
-                }}
-                style={{
-                  display: 'inline-block',
-                  width: char === ' ' ? '0.3em' : 'auto',
-                }}
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </motion.span>
-            ))}
-          </div>
+          {/* Full name — letter by letter, then collapses to KK */}
+          <motion.div
+            className="loader-name-wrap"
+            animate={isInitialsPhase ? { gap: '4px' } : { gap: '0px' }}
+            transition={{ duration: 0.5, ease: EASE_OUT_EXPO }}
+          >
+            {FULL_NAME.split('').map((char, i) => {
+              const isInitial = isInitialLetter(i);
+              const isFirstK = i === 0;
+
+              // During initials phase: big K (first) + small k (second)
+              const getFontSize = () => {
+                if (isInitialsPhase && isInitial) {
+                  return isFirstK ? 'clamp(64px, 12vw, 120px)' : 'clamp(36px, 6vw, 64px)';
+                }
+                return undefined; // use CSS default
+              };
+
+              return (
+                <motion.span
+                  key={i}
+                  className="loader-letter"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{
+                    opacity: isCollapsingOrAfter && !isInitial ? 0 : 1,
+                    y: 0,
+                    scale: 1,
+                    width: isCollapsingOrAfter && !isInitial ? 0 : 'auto',
+                    marginRight: isCollapsingOrAfter && !isInitial ? 0 : undefined,
+                  }}
+                  transition={{
+                    opacity: {
+                      delay: phase === PHASE.TYPING ? i * 0.08 : 0,
+                      duration: phase === PHASE.COLLAPSE ? 0.4 : 0.3,
+                      ease: EASE_OUT_EXPO,
+                    },
+                    y: {
+                      delay: phase === PHASE.TYPING ? i * 0.08 : 0,
+                      duration: 0.4,
+                      ease: EASE_OUT_EXPO,
+                    },
+                    width: { duration: 0.5, ease: EASE_OUT_EXPO },
+                  }}
+                  style={{
+                    display: 'inline-block',
+                    width: char === ' ' ? '0.3em' : undefined,
+                    fontSize: getFontSize(),
+                    alignSelf: isInitialsPhase && isInitial && !isFirstK ? 'flex-end' : 'center',
+                    transition: 'font-size 0.5s cubic-bezier(0.22, 1, 0.36, 1), align-self 0.5s cubic-bezier(0.22, 1, 0.36, 1)',
+                    overflow: 'hidden',
+                  }}
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </motion.span>
+              );
+            })}
+          </motion.div>
 
           {/* Bottom tagline */}
           <motion.p

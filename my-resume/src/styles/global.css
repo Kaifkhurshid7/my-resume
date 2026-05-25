@@ -805,7 +805,7 @@ body {
 
 .loader-name-wrap {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   overflow: hidden;
 }
@@ -816,6 +816,7 @@ body {
   color: #FFFFFF;
   letter-spacing: 0.02em;
   font-weight: 400;
+  line-height: 1;
 }
 
 .loader-label {
