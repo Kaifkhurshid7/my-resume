@@ -2,20 +2,50 @@
  * @file TechStack.jsx
  * @description Technical skills section with categorized skill cards.
  *
- * Renders a 4-column grid (responsive to 2-col on tablet, 1-col on mobile):
+ * Renders a grid (responsive 2-col on tablet/mobile):
  * - Dynamic skill category cards driven by TECH_CATEGORIES data
+ * - A decorative code snippet in the Languages card to fill space
  * - A special dark "Currently Learning" card for emphasis
  *
  * Each category can have flat items or subcategories (e.g., Backend
- * splits into Frameworks and Persistence).
+ * splits into Frameworks and Databases).
  */
 
-import { Terminal, Database, Brain, Globe, ChevronRight } from 'lucide-react';
+import { Terminal, Database, Brain, Globe, ChevronRight, Code } from 'lucide-react';
+import { motion } from 'framer-motion';
 import FadeIn from '../common/FadeIn';
 import { TECH_CATEGORIES, CURRENTLY_LEARNING } from '../../data/portfolio';
 
 /** Maps icon string identifiers to Lucide components */
 const ICON_MAP = { Terminal, Database, Brain, Globe };
+
+/** Decorative code snippet shown in the Languages card */
+const CodeDecoration = () => (
+  <motion.div
+    className="tech-code-decoration"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.4, duration: 0.8 }}
+  >
+    <div className="tech-code-header">
+      <span className="tech-code-dot" />
+      <span className="tech-code-dot" />
+      <span className="tech-code-dot" />
+      <span className="tech-code-filename">kaif.py</span>
+    </div>
+    <pre className="tech-code-body">
+      <code>
+        <span className="code-keyword">class</span> <span className="code-fn">KaifKhurshid</span>:
+        {'\n'}    role = <span className="code-str">"SDE Intern"</span>
+        {'\n'}    stack = [<span className="code-str">"MERN"</span>, <span className="code-str">"ML"</span>]
+        {'\n'}
+        {'\n'}    <span className="code-keyword">def</span> <span className="code-fn">build</span>(self):
+        {'\n'}        <span className="code-keyword">return</span> <span className="code-str">"impact"</span>
+      </code>
+    </pre>
+  </motion.div>
+);
 
 const TechStack = () => (
   <section id="tech" className="section">
@@ -68,6 +98,9 @@ const TechStack = () => (
                   ))}
                 </div>
               ))}
+
+              {/* Decorative code block for Languages card */}
+              {cat.id === 'languages' && <CodeDecoration />}
             </div>
           </FadeIn>
         );

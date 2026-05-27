@@ -432,6 +432,64 @@ body {
   color: var(--ink);
 }
 
+/* Code decoration — fills void space in Languages card */
+.tech-code-decoration {
+  margin-top: 28px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.tech-code-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rule);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.tech-code-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rule);
+}
+
+.tech-code-filename {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--mid);
+  margin-left: 8px;
+  letter-spacing: 0.05em;
+}
+
+.tech-code-body {
+  padding: 16px;
+  margin: 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--mid);
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.tech-code-body .code-keyword {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.tech-code-body .code-fn {
+  color: #0A66FF;
+}
+
+.tech-code-body .code-str {
+  color: #6B6B6B;
+  font-style: italic;
+}
+
 .tech-card-dark {
   background: var(--ink);
   padding: 48px 40px;
