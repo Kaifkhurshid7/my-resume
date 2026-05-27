@@ -114,7 +114,7 @@ export const PROJECTS = [
     desc: 'OCR-based recognition system for Indian musical notation — detects and classifies swara symbols from scanned manuscripts using a custom-labeled dataset and YOLOv8 bounding-box pipeline with sequential reconstruction, confidence scoring, and duplicate filtering. Achieves 90%+ detection accuracy.',
     tech: ['Python', 'FastAPI', 'YOLOv8', 'PyTorch', 'React', 'TypeScript', 'Vite', 'SQLite'],
     github: 'https://github.com/Kaifkhurshid7/swara-detection',
-    live: null,
+    live: 'https://swara-detection.vercel.app/',
   },
   {
     num: '02',
@@ -132,7 +132,7 @@ export const PROJECTS = [
     desc: 'Audio classification pipeline extracting a 26-dimensional spectral fingerprint (MFCCs, Delta, Chroma, Centroid, Rolloff, ZCR) from 3724 IRMAS samples across 11 instrument classes. Achieves 61.9% accuracy using k-NN with cosine distance, validated via 5-fold stratified cross-validation.',
     tech: ['React', 'Python', 'Librosa', 'Flask', 'Scikit-learn'],
     github: 'https://github.com/Kaifkhurshid7/Instrument-Recognition',
-    live: null,
+    live: 'https://instrument-recognizer.vercel.app/',
   },
   {
     num: '04',
