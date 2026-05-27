@@ -10,12 +10,12 @@
  * splits into Frameworks and Persistence).
  */
 
-import { Terminal, Database, Brain, ChevronRight } from 'lucide-react';
+import { Terminal, Database, Brain, Globe, ChevronRight } from 'lucide-react';
 import FadeIn from '../common/FadeIn';
 import { TECH_CATEGORIES, CURRENTLY_LEARNING } from '../../data/portfolio';
 
 /** Maps icon string identifiers to Lucide components */
-const ICON_MAP = { Terminal, Database, Brain };
+const ICON_MAP = { Terminal, Database, Brain, Globe };
 
 const TechStack = () => (
   <section id="tech" className="section">

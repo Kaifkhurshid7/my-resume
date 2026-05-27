@@ -23,7 +23,7 @@ export const PERSONAL = {
   name: 'Kaif Khurshid',
   role: 'Software Engineer',
   tagline: 'Data Science Enthusiast',
-  bio: 'Kaif Khurshid is a pre-final year B.Tech (Hons.) CSE student at XIM University, Bhubaneswar — passionate about building impactful solutions. He works with the MERN stack and is actively exploring Data Science and Machine Learning.',
+  bio: 'Backend-focused Computer Science student specializing in scalable web systems, real-time applications, and AI-powered solutions. Experienced in building RESTful APIs, backend architectures, OCR/NLP pipelines, and intelligent platforms using Node.js, Express, MongoDB, Python, and React.',
   email: 'kaifkhurshid18@gmail.com',
   github: 'https://github.com/Kaifkhurshid7',
   linkedin: 'https://linkedin.com/in/kaif-khurshid',
@@ -56,18 +56,19 @@ export const TECH_CATEGORIES = [
   },
   {
     id: 'backend',
-    title: 'Backend',
+    title: 'Backend & Databases',
     icon: 'Database',
     subcategories: [
-      { label: 'Frameworks', items: ['Node.js', 'Express', 'Flask'] },
-      { label: 'Persistence', items: ['MySQL', 'MongoDB', 'Redis'] },
+      { label: 'Frameworks', items: ['Node.js', 'Express.js', 'Flask', 'Django', 'DRF'] },
+      { label: 'Databases', items: ['MongoDB', 'MySQL', 'Redis'] },
+      { label: 'Tools', items: ['RESTful APIs', 'JWT Auth', 'Socket.IO'] },
     ],
   },
   {
     id: 'ai',
-    title: 'AI & Research',
+    title: 'AI / ML',
     icon: 'Brain',
-    items: ['TensorFlow', 'Scikit-Learn', 'OpenCV', 'Pandas', 'NumPy', 'NLTK'],
+    items: ['OpenCV', 'Scikit-Learn', 'NumPy', 'Pandas', 'TensorFlow', 'NLTK', 'OCR Pipelines', 'RAG Systems'],
   },
 ];
 
