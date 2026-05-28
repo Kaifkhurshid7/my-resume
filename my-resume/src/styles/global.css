@@ -53,11 +53,18 @@ body {
   font-family: 'DM Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  min-width: 0;
 }
 
 ::selection {
   background: var(--ink);
   color: var(--white);
+}
+
+/* Prevent horizontal overflow on mobile */
+#root {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Utility font classes */
@@ -966,24 +973,28 @@ body {
 
   .hero { grid-template-columns: 1fr; padding-top: 72px; }
   .hero-left { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--rule); }
-  .hero-right { padding: 48px 24px; }
+  .hero-right { padding: 48px 24px; overflow: hidden; }
+  .hero-badge { right: 0; bottom: -12px; }
+  .hero-photo-wrap { max-width: 300px; }
 
   .section-header { grid-template-columns: 1fr; }
   .section-header-left { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--rule); }
   .section-header-right { padding: 32px 24px; }
 
   .tech-grid { grid-template-columns: 1fr 1fr; }
-  .tech-card { border-right: none; border-bottom: 1px solid var(--rule); }
-  .tech-card-dark { border-bottom: 1px solid var(--rule); }
+  .tech-card { border-right: none; border-bottom: 1px solid var(--rule); padding: 32px 20px; }
+  .tech-card-dark { border-bottom: 1px solid var(--rule); padding: 32px 20px; }
+  .tech-code-decoration { display: none; }
 
   .edu-grid { grid-template-columns: 1fr; }
-  .edu-card { border-right: none; border-bottom: 1px solid var(--rule); }
+  .edu-card { border-right: none; border-bottom: 1px solid var(--rule); padding: 32px 24px; min-height: auto; }
 
   .projects-grid { grid-template-columns: 1fr; }
-  .project-card { border-right: none; }
+  .project-card { border-right: none; padding: 40px 24px 36px; }
 
   .achieve-layout { grid-template-columns: 1fr; }
   .achieve-main { border-right: none; border-bottom: 1px solid var(--rule); }
+  .achieve-card { padding: 40px 24px; }
 
   .footer-contact-grid { grid-template-columns: 1fr; }
   .contact-card { border-right: none; border-bottom: 1px solid var(--rule); }
@@ -993,10 +1004,15 @@ body {
 
 /* Small mobile adjustments */
 @media (max-width: 480px) {
-  .hero-title { font-size: clamp(40px, 12vw, 56px); }
-  .section-title { font-size: clamp(32px, 8vw, 48px); }
-  .footer-title { font-size: clamp(40px, 12vw, 80px); }
-  .project-card { padding: 36px 24px 32px; }
-  .project-num { font-size: 64px; }
-  .achieve-card { padding: 40px 24px; }
+  .hero-title { font-size: clamp(36px, 11vw, 52px); }
+  .section-title { font-size: clamp(28px, 8vw, 44px); }
+  .footer-title { font-size: clamp(36px, 11vw, 72px); }
+  .project-num { font-size: 56px; }
+  .tech-card { padding: 28px 16px; }
+  .tech-card-dark { padding: 28px 16px; }
+  .tech-card-title { font-size: 16px; }
+  .tech-tag { font-size: 8px; padding: 4px 8px; }
+  .project-title { font-size: 24px; }
+  .hero-photo-wrap { max-width: 260px; }
+  .loader-label { font-size: 7px; }
 }
