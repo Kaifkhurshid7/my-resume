@@ -37,7 +37,7 @@ const CodeDecoration = () => (
     <pre className="tech-code-body">
       <code>
         <span className="code-keyword">class</span> <span className="code-fn">KaifKhurshid</span>:
-        {'\n'}    role = <span className="code-str">"SDE Intern"</span>
+        {'\n'}    role = <span className="code-str">"SDE"</span>
         {'\n'}    stack = [<span className="code-str">"MERN"</span>, <span className="code-str">"ML"</span>]
         {'\n'}
         {'\n'}    <span className="code-keyword">def</span> <span className="code-fn">build</span>(self):
