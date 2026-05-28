@@ -124,7 +124,7 @@ export const PROJECTS = [
     desc: 'End-to-end computer vision pipeline that transforms diagram images into directed graphs — extracts 60–70 visual primitives using OpenCV, OCR, and NLP heuristics, then applies spatial clustering and rule-based post-processing to merge fragmented detections into logical nodes with 75% noise reduction.',
     tech: ['Python', 'OpenCV', 'OCR', 'NLP', 'Graph Analysis'],
     github: 'https://github.com/Kaifkhurshid7/intelligent-node-detection',
-    live: null,
+    live: 'https://intelligent-node-detection.vercel.app/',
   },
   {
     num: '03',
