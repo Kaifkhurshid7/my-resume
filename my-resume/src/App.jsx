@@ -23,6 +23,7 @@ import MobileMenu from './components/layout/MobileMenu';
 import Hero from './components/sections/Hero';
 import Marquee from './components/sections/Marquee';
 import TechStack from './components/sections/TechStack';
+import Experience from './components/sections/Experience';
 import Education from './components/sections/Education';
 import Projects from './components/sections/Projects';
 import Activities from './components/sections/Activities';
@@ -50,6 +51,7 @@ const App = () => {
         <Hero />
         <Marquee />
         <TechStack />
+        <Experience />
         <Education />
         <Projects />
         <Activities />
