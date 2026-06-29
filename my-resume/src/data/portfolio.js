@@ -68,7 +68,7 @@ export const TECH_CATEGORIES = [
     id: 'ai',
     title: 'AI / ML',
     icon: 'Brain',
-    items: ['OpenCV', 'Scikit-Learn', 'NumPy', 'Pandas', 'TensorFlow', 'NLTK', 'OCR Pipelines', 'RAG Systems'],
+    items: ['OpenCV', 'Scikit-Learn', 'NumPy', 'Pandas', 'TensorFlow', 'NLTK', 'OCR Pipelines', 'RAG Systems', 'LangGraph', 'LangChain', 'Vector Databases', 'Prompt Engineering'],
   },
 ];
 
@@ -102,6 +102,20 @@ export const EDUCATION = [
     school: 'Agrasen Dav Public School, Ramgarh Jharkhand',
     year: '2020 — 2021',
     active: false,
+  },
+];
+
+// ─── Experience ───────────────────────────────────────────────────────────────
+
+export const EXPERIENCE = [
+  {
+    company: 'LexiAI (Astute Lex Servicado Pvt. Ltd.)',
+    role: 'Backend Developer Intern',
+    duration: 'March 2026 — Present',
+    location: 'Remote',
+    desc: 'Engineered RESTful APIs and backend modules for the LexiAI platform serving 4 distinct user roles (student, faculty, admin, normal user), supporting dashboards, assessment workflows, and submission management system.',
+    tech: ['Node.js', 'Express.js', 'MongoDB', 'JWT Auth', 'RESTful APIs', 'Socket.IO'],
+    highlights: ['RESTful API Development', 'Multi-role Authorization', 'Assessment System', 'Submission Management'],
   },
 ];
 

@@ -506,7 +506,104 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   8. EDUCATION GRID
+   8. EXPERIENCE GRID
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.exp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.exp-card {
+  padding: 48px 40px;
+  border-right: none;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  transition: background 0.3s;
+}
+
+.exp-card:last-child { border-bottom: none; }
+.exp-card:hover { background: var(--white); }
+
+.exp-company {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--mid);
+  margin-bottom: 12px;
+}
+
+.exp-role {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  line-height: 1.1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.exp-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--mid);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.exp-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.exp-tech-tag {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  border: 1px solid var(--rule);
+  padding: 4px 10px;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+
+.exp-card:hover .exp-tech-tag {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.exp-footer {
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+
+.exp-meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.exp-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--mid);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   9. EDUCATION GRID
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 .edu-grid {
@@ -565,7 +662,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   9. PROJECTS GRID
+   10. PROJECTS GRID
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 .projects-grid {
@@ -657,7 +754,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   10. ACHIEVEMENTS & ROLES
+   11. ACHIEVEMENTS & ROLES
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 .achieve-layout {
@@ -775,7 +872,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   11. FOOTER
+   12. FOOTER
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 .footer {
@@ -854,7 +951,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   12. LOADER
+   13. LOADER
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 .loader {
@@ -906,7 +1003,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   13. MOBILE MENU
+   14. MOBILE MENU
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 .mobile-menu {
@@ -921,7 +1018,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   14. MARQUEE
+   15. MARQUEE
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 .marquee-wrap {
@@ -962,7 +1059,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   15. RESPONSIVE BREAKPOINTS
+   16. RESPONSIVE BREAKPOINTS
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 900px) {
@@ -985,6 +1082,9 @@ body {
   .tech-card { border-right: none; border-bottom: 1px solid var(--rule); padding: 32px 20px; }
   .tech-card-dark { border-bottom: 1px solid var(--rule); padding: 32px 20px; }
   .tech-code-decoration { display: none; }
+
+  .exp-grid { grid-template-columns: 1fr; }
+  .exp-card { border-right: none; border-bottom: 1px solid var(--rule); padding: 32px 24px; min-height: auto; }
 
   .edu-grid { grid-template-columns: 1fr; }
   .edu-card { border-right: none; border-bottom: 1px solid var(--rule); padding: 32px 24px; min-height: auto; }
