@@ -112,10 +112,10 @@ const Loader = ({ isVisible, onComplete }) => {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <span style={{ fontFamily: '"Space Mono", monospace', fontSize: '10px', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.15em' }}>
-                  SYS.BOOT_SEQ // V_1.0
+                  INITIALIZING // AI_BACKEND_ENV
                 </span>
                 <span style={{ fontFamily: '"Space Mono", monospace', fontSize: '10px', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.15em' }}>
-                  AI_ENVIRONMENT_INIT
+                  LLM_VECTOR_DB_ACTIVE
                 </span>
               </div>
 
@@ -207,18 +207,17 @@ const Loader = ({ isVisible, onComplete }) => {
                   marginTop: '16px'
                 }}
               >
-                Data Science // Backend Architecture
+                AI & Backend Engineer
               </motion.p>
             </div>
 
-            {/* Bottom Row: Aesthetic Metrics */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', overflow: 'hidden' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', overflow: 'hidden' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <span style={{ fontFamily: '"Space Mono", monospace', fontSize: '9px', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.15em' }}>
-                  LAT: 23° 38' N / LONG: 85° 30' E
+                  RAG · LLM Services · REST APIs
                 </span>
                 <span style={{ fontFamily: '"Space Mono", monospace', fontSize: '9px', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.15em' }}>
-                  EST. 2026 // NEURAL NETWORK SECURE
+                  PRODUCTION_GRADE // DEPLOYED_2026
                 </span>
               </div>
               <motion.div
