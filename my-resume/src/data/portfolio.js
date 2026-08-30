@@ -21,9 +21,9 @@ export const NAV_LINKS = [
 
 export const PERSONAL = {
   name: 'Kaif Khurshid',
-  role: 'Software Engineer',
-  tagline: 'Data Science Enthusiast',
-  bio: 'Backend-focused Computer Science student specializing in scalable web systems, real-time applications, and AI-powered solutions. Experienced in building RESTful APIs, backend architectures, OCR/NLP pipelines, and intelligent platforms using Node.js, Express, MongoDB, Python, and React.',
+  role: 'AI & Backend Engineer',
+  tagline: 'RAG · LLM Services · Production APIs',
+  bio: 'Building production-grade AI backends and RAG systems. Specialized in LLM services, vector databases, and scalable microservices architecture. Experienced in Django REST Framework, FastAPI, Node.js, and building intelligent systems that bridge models with production infrastructure.',
   email: 'kaifkhurshid18@gmail.com',
   github: 'https://github.com/Kaifkhurshid7',
   linkedin: 'https://linkedin.com/in/kaif-khurshid',
@@ -33,16 +33,16 @@ export const PERSONAL = {
 // ─── Marquee ──────────────────────────────────────────────────────────────────
 
 export const MARQUEE_ITEMS = [
-  'MERN Stack',
-  'Machine Learning',
-  'Artificial Intelligence',
-  'Deep Learning',
-  'Natural Language Processing',
-  'Big Data',
-  'Data Science',
-  'Operating Systems',
-  'Database Systems',
+  'RAG Systems',
+  'LLM Services',
+  'Vector Databases',
+  'Django REST Framework',
+  'FastAPI',
+  'Real-time APIs',
+  'Microservices',
   'System Design',
+  'Database Optimization',
+  'Production Backend',
 ];
 
 // ─── Technical Skills ─────────────────────────────────────────────────────────
@@ -52,31 +52,31 @@ export const TECH_CATEGORIES = [
     id: 'languages',
     title: 'Languages',
     icon: 'Terminal',
-    items: ['Python', 'Java', 'C', 'JavaScript', 'SQL'],
+    items: ['Python', 'JavaScript', 'SQL', 'TypeScript', 'Java'],
   },
   {
-    id: 'backend',
-    title: 'Backend & Databases',
-    icon: 'Database',
+    id: 'ai_backend',
+    title: 'AI & Backend',
+    icon: 'Brain',
     subcategories: [
-      { label: 'Frameworks', items: ['Node.js', 'Express.js', 'Flask', 'Django', 'DRF'] },
-      { label: 'Databases', items: ['MongoDB', 'MySQL', 'Redis'] },
-      { label: 'Tools', items: ['RESTful APIs', 'JWT Auth', 'Socket.IO'] },
+      { label: 'LLM & RAG', items: ['LangChain', 'LangGraph', 'Vector Databases', 'Embeddings', 'Prompt Engineering'] },
+      { label: 'Backend Frameworks', items: ['Django REST Framework', 'FastAPI', 'Express.js', 'Flask'] },
+      { label: 'Infrastructure', items: ['PostgreSQL', 'MongoDB', 'Redis', 'JWT Auth', 'WebSockets'] },
     ],
   },
   {
-    id: 'ai',
-    title: 'AI / ML',
-    icon: 'Brain',
-    items: ['OpenCV', 'Scikit-Learn', 'NumPy', 'Pandas', 'TensorFlow', 'NLTK', 'OCR Pipelines', 'RAG Systems', 'LangGraph', 'LangChain', 'Vector Databases', 'Prompt Engineering'],
+    id: 'tools',
+    title: 'Tools & Cloud',
+    icon: 'Wrench',
+    items: ['Docker', 'Git', 'AWS', 'Linux', 'REST APIs', 'System Design', 'API Design', 'NLP'],
   },
 ];
 
 export const CURRENTLY_LEARNING = {
-  title: 'Machine Learning',
-  subtitle: '& Data Science',
-  description: 'Exploring ML algorithms and Data Science concepts for future data science roles.',
-  label: 'For Data Science Role',
+  title: 'Advanced LLM Optimization',
+  subtitle: '& Vector Search',
+  description: 'Exploring fine-tuning, retrieval optimization, and production-scale RAG deployments.',
+  label: 'For Production LLM',
 };
 
 // ─── Education ────────────────────────────────────────────────────────────────
@@ -110,12 +110,12 @@ export const EDUCATION = [
 export const EXPERIENCE = [
   {
     company: 'LexiAI (Astute Lex Servicado Pvt. Ltd.)',
-    role: 'Backend Developer Intern',
+    role: 'AI & Backend Developer',
     duration: 'March 2026 — Present',
     location: 'Remote',
-    desc: 'Engineered RESTful APIs and backend modules for the LexiAI platform serving 4 distinct user roles (student, faculty, admin, normal user), supporting dashboards, assessment workflows, and submission management system.',
-    tech: ['Node.js', 'Express.js', 'MongoDB', 'JWT Auth', 'RESTful APIs', 'Socket.IO'],
-    highlights: ['RESTful API Development', 'Multi-role Authorization', 'Assessment System', 'Submission Management'],
+    desc: 'Architected 25+ RESTful APIs and LLM-powered backend services for the LexiAI education platform. Implemented RAG pipelines with vector database retrieval for AI-generated performance insights. Built Python web scrapers and optimized SQL queries (40% latency reduction). Deployed Celery + Redis background workers for batch LLM inference.',
+    tech: ['Django REST Framework', 'Python', 'LangChain', 'Vector Databases', 'PostgreSQL', 'Redis', 'JWT Auth', 'RBAC'],
+    highlights: ['25+ RESTful APIs', 'RAG & LLM Services', 'API Optimization (40% latency cut)', 'Background Workers'],
   },
 ];
 
@@ -125,35 +125,35 @@ export const PROJECTS = [
   {
     num: '01',
     type: 'OCR & Computer Vision',
-    title: 'Swaralipi OCR System',
-    desc: 'OCR-based recognition system for Indian musical notation — detects and classifies swara symbols from scanned manuscripts using a custom-labeled dataset and YOLOv8 bounding-box pipeline with sequential reconstruction, confidence scoring, and duplicate filtering. Achieves 90%+ detection accuracy.',
-    tech: ['Python', 'FastAPI', 'YOLOv8', 'PyTorch', 'React', 'TypeScript', 'Vite', 'SQLite'],
+    title: 'Swaralipi — Music Notation Detection',
+    desc: 'End-to-end deep learning system digitizing handwritten Hindustani notation. Trained YOLOv8 on self-annotated 480-image dataset across 12 swara classes, achieving 89% mAP@0.5, 91% precision, 85.4% recall. Designed 5-stage post-processing pipeline reducing duplicate detections by 12%.',
+    tech: ['Python', 'PyTorch', 'YOLOv8', 'FastAPI', 'React', 'SQLite'],
     github: 'https://github.com/Kaifkhurshid7/swara-detection',
     live: 'https://swara-detection.vercel.app/',
   },
   {
     num: '02',
     type: 'Computer Vision & Graph Analysis',
-    title: 'Intelligent Node Detection',
-    desc: 'End-to-end computer vision pipeline that transforms diagram images into directed graphs — extracts 60–70 visual primitives using OpenCV, OCR, and NLP heuristics, then applies spatial clustering and rule-based post-processing to merge fragmented detections into logical nodes with 75% noise reduction.',
-    tech: ['Python', 'OpenCV', 'OCR', 'NLP', 'Graph Analysis'],
+    title: 'Intelligent Node Detection System',
+    desc: 'End-to-end computer vision pipeline converting diagram images into structured workflow graphs. Implemented 8-stage processing pipeline using OpenCV, Tesseract OCR, and semantic classification at <120ms inference latency. Reduced noisy detections by 82%+ via Hough-based edge detection and IoU deduplication.',
+    tech: ['Python', 'FastAPI', 'OpenCV', 'Tesseract OCR', 'NetworkX', 'Docker', 'React'],
     github: 'https://github.com/Kaifkhurshid7/intelligent-node-detection',
     live: 'https://intelligent-node-detection.vercel.app/',
   },
   {
     num: '03',
-    type: 'AI & Signal Processing',
-    title: 'Instrument Recognition',
-    desc: 'Audio classification pipeline extracting a 26-dimensional spectral fingerprint (MFCCs, Delta, Chroma, Centroid, Rolloff, ZCR) from 3724 IRMAS samples across 11 instrument classes. Achieves 61.9% accuracy using k-NN with cosine distance, validated via 5-fold stratified cross-validation.',
-    tech: ['React', 'Python', 'Librosa', 'Flask', 'Scikit-learn'],
-    github: 'https://github.com/Kaifkhurshid7/Instrument-Recognition',
+    type: 'Audio Classification & ML',
+    title: 'Instrument Recognition Dashboard',
+    desc: 'Audio classification system identifying 11 instrument classes from 3,724 IRMAS samples. Engineered 26-dimensional spectral feature vector (MFCCs, Delta, Chroma, Centroid, Rolloff, ZCR) through 5-stage signal processing pipeline. Achieved 71.9% accuracy with tuned k-NN, validated via 5-fold stratified cross-validation.',
+    tech: ['Python', 'Librosa', 'Scikit-learn', 'Flask', 'React'],
+    github: 'https://github.com/Kaifkhurshid7/Instrument-Recognizer-KNN-BASED',
     live: 'https://instrument-recognizer.vercel.app/',
   },
   {
     num: '04',
     type: 'Fullstack System',
     title: 'ACM-XIM Envoy',
-    desc: 'Secure full-stack platform with JWT-based role authentication and protected REST APIs for posts, likes, comments, and live news via NewsAPI. Features real-time Socket.IO messaging supporting 100+ active users.',
+    desc: 'Production-deployed backend serving 100+ concurrent users with JWT role-based authentication. Secured REST APIs for posts, likes, comments, and real-time news integration. Implemented WebSocket messaging via Socket.IO with optimized MongoDB queries (3x latency reduction via compound indexing).',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Socket.IO'],
     github: 'https://github.com/Kaifkhurshid7/ACM-XIM-Envoy',
     live: 'https://acmmedia-frontend.vercel.app/',
