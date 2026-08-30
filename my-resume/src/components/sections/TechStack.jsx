@@ -11,13 +11,13 @@
  * splits into Frameworks and Databases).
  */
 
-import { Terminal, Database, Brain, Globe, ChevronRight, Code } from 'lucide-react';
+import { Terminal, Database, Brain, Globe, ChevronRight, Code, Cloud } from 'lucide-react';
 import { motion } from 'framer-motion';
 import FadeIn from '../common/FadeIn';
 import { TECH_CATEGORIES, CURRENTLY_LEARNING } from '../../data/portfolio';
 
 /** Maps icon string identifiers to Lucide components */
-const ICON_MAP = { Terminal, Database, Brain, Globe };
+const ICON_MAP = { Terminal, Database, Brain, Globe, Wrench: Cloud };
 
 /** Decorative code snippet shown in the Languages card */
 const CodeDecoration = () => (
@@ -38,7 +38,7 @@ const CodeDecoration = () => (
       <code>
         <span className="code-keyword">class</span> <span className="code-fn">KaifKhurshid</span>:
         {'\n'}    role = <span className="code-str">"SDE"</span>
-        {'\n'}    stack = [<span className="code-str">"MERN"</span>, <span className="code-str">"ML"</span>]
+        {'\n'}    stack = [<span className="code-str">"RAG"</span>, <span className="code-str">"APIs"</span>]
         {'\n'}
         {'\n'}    <span className="code-keyword">def</span> <span className="code-fn">build</span>(self):
         {'\n'}        <span className="code-keyword">return</span> <span className="code-str">"impact"</span>
