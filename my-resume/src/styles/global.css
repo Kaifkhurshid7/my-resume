@@ -1078,10 +1078,41 @@ body {
   .section-header-left { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--rule); }
   .section-header-right { padding: 32px 24px; }
 
-  .tech-grid { grid-template-columns: 1fr 1fr; }
-  .tech-card { border-right: none; border-bottom: 1px solid var(--rule); padding: 32px 20px; }
-  .tech-card-dark { border-bottom: 1px solid var(--rule); padding: 32px 20px; }
+  .tech-grid { grid-template-columns: 1fr; gap: 0; }
+  .tech-card { 
+    border-right: none; 
+    border-bottom: 1px solid var(--rule); 
+    padding: 40px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .tech-card:last-child { border-bottom: none; }
+  .tech-icon { 
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  .tech-card > div:last-of-type {
+    grid-column: 1 / -1;
+  }
+  .tech-card-title {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 12px;
+  }
+  .tech-tag { 
+    display: inline-flex;
+    font-size: 9px; 
+    padding: 6px 12px;
+    margin: 4px 4px 4px 0;
+  }
   .tech-code-decoration { display: none; }
+  .tech-card-dark { 
+    border-bottom: 1px solid var(--rule); 
+    padding: 40px 24px;
+    grid-column: 1 / -1;
+  }
 
   .exp-grid { grid-template-columns: 1fr; }
   .exp-card { border-right: none; border-bottom: 1px solid var(--rule); padding: 32px 24px; min-height: auto; }
