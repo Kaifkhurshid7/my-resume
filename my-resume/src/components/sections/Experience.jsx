@@ -24,7 +24,7 @@ const Experience = () => (
       <div className="section-header-right">
         <FadeIn delay={0.1}>
           <p className="section-note">
-            Building scalable backend systems and real-time applications across diverse platforms and user roles.
+            Multi-tenant Django APIs, LLM and RAG services, and real-time features for a legal-tech platform.
           </p>
         </FadeIn>
       </div>
@@ -39,6 +39,13 @@ const Experience = () => (
               <p className="exp-company">{exp.company}</p>
               <h3 className="exp-role">{exp.role}</h3>
               <p className="exp-desc">{exp.desc}</p>
+              {exp.points && (
+                <ul className="exp-points">
+                  {exp.points.map((pt) => (
+                    <li key={pt}>{pt}</li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             {/* Tech stack */}

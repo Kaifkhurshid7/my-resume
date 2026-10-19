@@ -37,8 +37,8 @@ const CodeDecoration = () => (
     <pre className="tech-code-body">
       <code>
         <span className="code-keyword">class</span> <span className="code-fn">KaifKhurshid</span>:
-        {'\n'}    role = <span className="code-str">"SDE"</span>
-        {'\n'}    stack = [<span className="code-str">"RAG"</span>, <span className="code-str">"APIs"</span>]
+        {'\n'}    role = <span className="code-str">"AI + Backend"</span>
+        {'\n'}    stack = [<span className="code-str">"LLMs"</span>, <span className="code-str">"Django"</span>]
         {'\n'}
         {'\n'}    <span className="code-keyword">def</span> <span className="code-fn">build</span>(self):
         {'\n'}        <span className="code-keyword">return</span> <span className="code-str">"impact"</span>
@@ -54,13 +54,13 @@ const TechStack = () => (
       <div className="section-header-left">
         <FadeIn>
           <p className="section-eyebrow">Technical Capabilities</p>
-          <h2 className="section-title">My<br /><em>Wallet.</em></h2>
+          <h2 className="section-title">Technical<br /><em>Stack.</em></h2>
         </FadeIn>
       </div>
       <div className="section-header-right">
         <FadeIn delay={0.1}>
           <p className="section-note">
-            Specialized in backend architectures, machine learning integration, and scalable system design.
+            LLM and RAG services, Python backends, machine learning and the system design that holds them together.
           </p>
         </FadeIn>
       </div>

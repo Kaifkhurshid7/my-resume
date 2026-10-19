@@ -4,7 +4,8 @@
  *
  * Animation logic:
  * 1. Progress counter flickers from 00.00 to 100.00% rapidly (computational feel).
- * 2. Visuals combine a spinning geometric "node" and elegant typography.
+ * 2. A four-stage pipeline (Ingest → Embed → Retrieve → Serve) lights up as
+ *    progress passes each threshold, with a status line naming the current stage.
  * 3. Screen exit is a staggered 5-column "shutter" slide-up, revealing the site
  *    behind it like a hyper-modern aperture.
  */
@@ -12,8 +13,19 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+/** Boot stages; `at` is the progress (%) at which the stage becomes active. */
+const STAGES = [
+  { label: 'Ingest', status: 'chunking documents', at: 0 },
+  { label: 'Embed', status: 'generating embeddings', at: 25 },
+  { label: 'Retrieve', status: 'querying vector store', at: 50 },
+  { label: 'Serve', status: 'starting API server', at: 75 },
+];
+
+const MONO = '"Space Mono", monospace';
+
 const Loader = ({ isVisible, onComplete }) => {
   const [displayProgress, setDisplayProgress] = useState('00.00');
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     if (!isVisible) return;
@@ -26,8 +38,10 @@ const Loader = ({ isVisible, onComplete }) => {
       const elapsed = Date.now() - startTime;
       const fraction = Math.min(elapsed / duration, 1);
       const baseProgress = fraction * 100;
+      setProgress(baseProgress);
 
       if (fraction >= 1) {
+        setProgress(100);
         setDisplayProgress('100.00');
         setTimeout(() => {
           if (onComplete) onComplete();
@@ -43,6 +57,9 @@ const Loader = ({ isVisible, onComplete }) => {
     rAF = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(rAF);
   }, [isVisible, onComplete]);
+
+  const activeStage = STAGES.reduce((acc, st, i) => (progress >= st.at ? i : acc), 0);
+  const done = progress >= 100;
 
   // Framer Motion variants
   const panelVariants = {
@@ -112,10 +129,10 @@ const Loader = ({ isVisible, onComplete }) => {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <span style={{ fontFamily: '"Space Mono", monospace', fontSize: '10px', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.15em' }}>
-                  INITIALIZING // AI_BACKEND_ENV
+                  BOOTING // RAG_PIPELINE
                 </span>
                 <span style={{ fontFamily: '"Space Mono", monospace', fontSize: '10px', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.15em' }}>
-                  LLM_VECTOR_DB_ACTIVE
+                  VECTOR_STORE · LLM_AGENTS · API
                 </span>
               </div>
 
@@ -133,48 +150,43 @@ const Loader = ({ isVisible, onComplete }) => {
             {/* Center Area: Radial Graphic & Typography */}
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
 
-              {/* Revolving Data Node (SVG) */}
+              {/* Pipeline: Ingest → Embed → Retrieve → Serve */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.5, ease: 'easeOut' }}
-                style={{ marginBottom: '32px', position: 'relative', width: '80px', height: '80px' }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                style={{ marginBottom: '40px', width: 'min(440px, 86vw)' }}
               >
-                <svg viewBox="0 0 100 100" width="100%" height="100%">
-                  {/* Outer Dashed Orbit */}
-                  <motion.circle
-                    cx="50" cy="50" r="46"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.2)"
-                    strokeWidth="1"
-                    strokeDasharray="4 6"
-                    animate={{ rotate: 360 }}
-                    transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
-                    style={{ transformOrigin: '50% 50%' }}
+                <div style={{ position: 'relative', display: 'flex', justifyContent: 'space-between' }}>
+                  {/* Track */}
+                  <div style={{ position: 'absolute', left: 6, right: 6, top: 5, height: 1, backgroundColor: 'rgba(255,255,255,0.12)' }} />
+                  {/* Fill */}
+                  <div
+                    style={{
+                      position: 'absolute', left: 6, top: 5, height: 1,
+                      width: `calc((100% - 12px) * ${progress / 100})`,
+                      backgroundColor: '#FFFFFF',
+                    }}
                   />
-                  {/* Inner Solid Ring */}
-                  <motion.circle
-                    cx="50" cy="50" r="30"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.4)"
-                    strokeWidth="1"
-                    animate={{ rotate: -360 }}
-                    transition={{ repeat: Infinity, duration: 12, ease: 'linear' }}
-                    style={{ transformOrigin: '50% 50%' }}
-                  />
-                  {/* Pulsing Core */}
-                  <motion.circle
-                    cx="50" cy="50" r="10"
-                    fill="#FFFFFF"
-                    animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
-                    transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-                  />
-                </svg>
-
-                {/* Crosshairs overlaying SVG */}
-                <div style={{ position: 'absolute', inset: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                  <div style={{ width: '1px', height: '140%', backgroundColor: 'rgba(255,255,255,0.1)', position: 'absolute' }} />
-                  <div style={{ height: '1px', width: '140%', backgroundColor: 'rgba(255,255,255,0.1)', position: 'absolute' }} />
+                  {STAGES.map((st, i) => {
+                    const reached = i <= activeStage;
+                    return (
+                      <div key={st.label} style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+                        <span
+                          style={{
+                            width: 11, height: 11, borderRadius: '50%',
+                            border: '1px solid rgba(255,255,255,0.5)',
+                            backgroundColor: reached ? '#FFFFFF' : '#0D0D0D',
+                            boxShadow: i === activeStage && !done ? '0 0 0 4px rgba(255,255,255,0.12)' : 'none',
+                            transition: 'all 0.3s',
+                          }}
+                        />
+                        <span style={{ fontFamily: MONO, fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: reached ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.25)', transition: 'color 0.3s' }}>
+                          {st.label}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </motion.div>
 
@@ -207,17 +219,21 @@ const Loader = ({ isVisible, onComplete }) => {
                   marginTop: '16px'
                 }}
               >
-                AI & Backend Engineer
+                AI & Backend Developer
               </motion.p>
+
+              <p style={{ fontFamily: MONO, fontSize: 10, letterSpacing: '0.15em', color: 'rgba(255,255,255,0.4)', marginTop: 40, height: 14 }}>
+                {done ? '> ready' : `> ${STAGES[activeStage].status}...`}
+              </p>
             </div>
 
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', overflow: 'hidden' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <span style={{ fontFamily: '"Space Mono", monospace', fontSize: '9px', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.15em' }}>
-                  RAG · LLM Services · REST APIs
+                  LLM Agents · RAG · Backend APIs
                 </span>
                 <span style={{ fontFamily: '"Space Mono", monospace', fontSize: '9px', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.15em' }}>
-                  PRODUCTION_GRADE // DEPLOYED_2026
+                  PYTHON · DJANGO · FASTAPI
                 </span>
               </div>
               <motion.div

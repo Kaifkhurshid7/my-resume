@@ -76,7 +76,9 @@ const Hero = () => (
             className="hero-photo"
             loading="eager"
           />
-          <div className="hero-badge">{PERSONAL.tagline}</div>
+          <div className="hero-badge">
+            {PERSONAL.role}
+          </div>
         </div>
       </FadeIn>
     </div>
